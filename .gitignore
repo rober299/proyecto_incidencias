@@ -1,0 +1,19 @@
+# Entornos de desarrollo
+.idea/
+.vscode/
+*.iml
+
+# Java / Backend
+target/
+out/
+*.class
+
+# Frontend / Móvil
+node_modules/
+build/
+.gradle/
+local.properties
+
+# SO
+.DS_Store
+Thumbs.db
