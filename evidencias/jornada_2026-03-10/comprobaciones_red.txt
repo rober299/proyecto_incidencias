@@ -1,0 +1,44 @@
+PS C:\Users\rober\proyecto_incidencias> ping google.es
+
+Haciendo ping a google.es [2a00:1450:4003:80b::2003] con 32 bytes de datos:
+Respuesta desde 2a00:1450:4003:80b::2003: tiempo=4ms
+Respuesta desde 2a00:1450:4003:80b::2003: tiempo=8ms 
+Respuesta desde 2a00:1450:4003:80b::2003: tiempo=5ms 
+Respuesta desde 2a00:1450:4003:80b::2003: tiempo=5ms 
+
+Estadísticas de ping para 2a00:1450:4003:80b::2003:
+    Paquetes: enviados = 4, recibidos = 4, perdidos = 0
+    (0% perdidos),
+Tiempos aproximados de ida y vuelta en milisegundos:
+    Mínimo = 4ms, Máximo = 8ms, Media = 5ms
+PS C:\Users\rober\proyecto_incidencias> tracert -d -h 5 8.8.8.8
+
+Traza a 8.8.8.8 sobre caminos de 5 saltos como máximo.
+
+  1     1 ms     1 ms     1 ms  192.168.1.1
+  2     2 ms     2 ms     1 ms  10.0.0.61 
+  3     3 ms     2 ms     1 ms  172.16.4.1 
+  4     8 ms     *        4 ms  10.220.98.246 
+  5     *        *        *     Tiempo de espera agotado para esta solicitud.
+
+Traza completa.
+PS C:\Users\rober\proyecto_incidencias> netstat -ano | Select-String "LISTENING" | Select-Object -First 5
+STENING" | Select-Object -First 5
+STENING" | Select-Object -First 5
+
+STENING" | Select-Object -First 5
+
+STENING" | Select-Object -First 5
+STENING" | Select-Object -First 5
+STENING" | Select-Object -First 5
+
+  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING
+1976
+  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING
+4
+  TCP    0.0.0.0:902            0.0.0.0:0              LISTENING
+6608
+  TCP    0.0.0.0:912            0.0.0.0:0              LISTENING
+6608
+  TCP    0.0.0.0:1521           0.0.0.0:0              LISTENING
+5552

@@ -1,0 +1,116 @@
+PS C:\Users\rober\proyecto_incidencias> pwd
+
+Path
+----
+C:\Users\rober\proyecto_incidencias
+
+
+PS C:\Users\rober\proyecto_incidencias> ls
+
+
+    Directorio: C:\Users\rober\proyecto_incidencias        
+
+
+Mode                 LastWriteTime         Length Name     
+----                 -------------         ------ ----     
+d-----        09/03/2026     15:09                api      
+d-----        09/03/2026     15:08                bd       
+d-----        10/03/2026      9:42                docs     
+d-----        09/03/2026     16:00                evidenci 
+                                                  as       
+d-----        09/03/2026     15:09                frontend 
+d-----        09/03/2026     15:09                movil    
+d-----        09/03/2026     15:08                src      
+d-----        09/03/2026     15:09                tests    
+-a----        09/03/2026     15:38            197 .gitigno 
+                                                  re       
+-a----        09/03/2026     15:38            208 .gitmess 
+                                                  age      
+-a----        09/03/2026     15:39            200 LICENSE  
+-a----        09/03/2026     15:21           2039 README.m 
+                                                  d        
+
+
+PS C:\Users\rober\proyecto_incidencias> echo "Esto es un archivo de prueba " > prueba.txt
+PS C:\Users\rober\proyecto_incidencias> cp prueba.txt copia_prueba.txt
+PS C:\Users\rober\proyecto_incidencias> ls
+
+
+    Directorio: C:\Users\rober\proyecto_incidencias
+
+
+Mode                 LastWriteTime         Length Name    
+----                 -------------         ------ ----    
+d-----        09/03/2026     15:09                api     
+d-----        09/03/2026     15:08                bd      
+d-----        10/03/2026      9:42                docs    
+d-----        10/03/2026      9:57                evidenci
+                                                  as      
+d-----        09/03/2026     15:09                frontend
+d-----        09/03/2026     15:09                movil   
+d-----        09/03/2026     15:08                src      d-----        09/03/2026     15:09                tests    -a----        09/03/2026     15:38            197 .gitigno                                                   re       -a----        09/03/2026     15:38            208 .gitmess                                                   age      
+-a----        10/03/2026     10:01             64 copia_pr 
+                                                  ueba.txt 
+-a----        09/03/2026     15:39            200 LICENSE  
+-a----        10/03/2026     10:01             64 prueba.t 
+                                                  xt       
+-a----        09/03/2026     15:21           2039 README.m 
+                                                  d        
+
+
+PS C:\Users\rober\proyecto_incidencias> rm copia_prueba.txt
+
+PS C:\Users\rober\proyecto_incidencias> icacls prueba.txt
+prueba.txt NT AUTHORITY\SYSTEM:(I)(F)
+           BUILTIN\Administradores:(I)(F)
+           WILKY\rober:(I)(F)
+
+Se procesaron correctamente 1 archivos; error al procesar 0 archivos
+PS C:\Users\rober\proyecto_incidencias> Select-String -Path
+ prueba.txt -Pattern "prueba"
+
+prueba.txt:1:Esto es un archivo de prueba 
+PS C:\Users\rober\proyecto_incidencias> Get-Process | Select-Object -First 5
+
+Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI
+-------  ------    -----      -----     ------     --  --
+    242      24     3824       6520       4,66   8440   4
+    252      13     4052       6432             10448   0
+    227      19    32148       5848       0,88  11292   4
+    371      22    44656       9016       0,42  30664   4
+    387      21    13308      15088       1,44  18324   4
+
+
+PS C:\Users\rober\proyecto_incidencias> Compress-Archive -Path prueba.txt -DestinationPath prueba.zip
+PS C:\Users\rober\proyecto_incidencias> ls
+
+
+    Directorio: C:\Users\rober\proyecto_incidencias
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        09/03/2026     15:09                api
+d-----        09/03/2026     15:08                bd
+d-----        10/03/2026      9:42                docs
+d-----        10/03/2026      9:57                evidenci
+                                                  as
+d-----        09/03/2026     15:09                frontend
+d-----        09/03/2026     15:09                movil
+d-----        09/03/2026     15:08                src
+d-----        09/03/2026     15:09                tests
+-a----        09/03/2026     15:38            197 .gitigno
+                                                  re
+-a----        09/03/2026     15:38            208 .gitmess
+                                                  age
+-a----        09/03/2026     15:39            200 LICENSE
+-a----        10/03/2026     10:01             64 prueba.t
+                                                  xt
+-a----        10/03/2026     10:09            174 prueba.z
+                                                  ip
+-a----        09/03/2026     15:21           2039 README.m
+                                                  d
+
+
+PS C:\Users\rober\proyecto_incidencias> rm prueba.txt
+PS C:\Users\rober\proyecto_incidencias> rm prueba.zip
