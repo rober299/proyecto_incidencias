@@ -40,3 +40,23 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **¿Qué son?** Las variables de entorno son unos "atajos" globales o etiquetas de texto que guarda el sistema operativo. Contienen información sobre cómo y dónde deben ejecutarse los programas.
 - **¿Para qué sirven?** Sirven para que cualquier programa como Visual Studio Code pueda encontrar herramientas necesarias (como el compilador de Java) sin tener que decirle la ruta exacta absoluta cada vez. Si Java se actualiza y cambia de carpeta, solo cambias la variable y todos los programas se enteran a la vez.
 - **¿Cómo comprobar que están activas?** Se puede verificar desde la terminal. En PowerShell, basta con ejecutar el comando: `echo $env:JAVA_HOME`. Si devuelve la ruta configurada, la variable está activa y lista para usarse.
+
+## Jornada 03 - Miércoles 11 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Creación de la guía interna de uso de Git (`guia_git.md`) definiendo la estrategia de ramas y Conventional Commits.
+- **Bloque 2:** Simulación de ciclos de trabajo reales creando ramas `feature`, realizando cambios y fusionando (merge) con la rama `desarrollo`.
+- **Bloque 3:** Provocación y resolución manual de un conflicto de Git documentado paso a paso en `resolucion_conflicto.md`.
+
+### Bloque 4: Tabla de seguimiento de commits del día
+
+| Hora  | Objetivo         | Rama                        | Descripción Funcional (Mensaje del commit)                     |
+| :---- | :--------------- | :-------------------------- | :------------------------------------------------------------- |
+| 11:00 | Documentación    | `feature/actualizar-readme` | `docs: añade estado de desarrollo al README`                   |
+| 11:40 | Corrección       | `desarrollo`                | `fix: corrige formato de texto corrupto en el README`          |
+| 11:50 | BBDD             | `feature/documentacion-bd`  | `feat: crea archivo inicial para el esquema de base de datos`  |
+| 12:35 | Prueba conflicto | `feature/cambio-a`          | `feat: añade texto del primer programador`                     |
+| 12:40 | Prueba conflicto | `feature/cambio-b`          | `feat: añade texto del segundo programador`                    |
+| 12:50 | Resolución       | `desarrollo`                | `fix: resuelve conflicto manualmente conservando ambos lineas` |
+| 13:00 | Mantenimiento    | `desarrollo`                | `chore: limpia archivo de prueba de conflictos`                |
