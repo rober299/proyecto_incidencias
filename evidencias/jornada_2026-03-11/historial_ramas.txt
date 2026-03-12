@@ -1,0 +1,9 @@
+PS C:\Users\rober\proyecto_incidencias> git log --oneline --graph --all
+* 1a5a9e3 (HEAD -> desarrollo) feat: crea archivo inicial para el esquema de base de datos
+* 39e1916 fix: corrige formato de texto corrupto en el README
+* 02cfea4 docs: añade estado de desarrollo al README
+* c0eeca7 (origin/main, origin/desarrollo, main) feat: crea automatización de backups y documenta configuración del entorno
+* 87acede feat: añado carpeta de evidencias con capturas de instalación
+* 27e42c9 docs: añade diario de prácticas de la jornada 01
+* 8c8eea0 feat: inicializa estructura base del proyecto y configuracion git
+* 06f3438 chore: commit inicial para inicializar rama main
