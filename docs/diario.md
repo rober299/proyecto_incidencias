@@ -60,3 +60,10 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 | 12:40 | Prueba conflicto | `feature/cambio-b`          | `feat: añade texto del segundo programador`                    |
 | 12:50 | Resolución       | `desarrollo`                | `fix: resuelve conflicto manualmente conservando ambos lineas` |
 | 13:00 | Mantenimiento    | `desarrollo`                | `chore: limpia archivo de prueba de conflictos`                |
+
+## Jornada 04 - Jueves 12 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1, 2 y 3:** Levantamiento de requisitos (Funcionales y No Funcionales) y definición de las reglas de negocio estructurales. Creación del diagrama visual de casos de uso para los 3 roles del sistema.
+- **Bloque 4:** Elaboración del Backlog inicial priorizado utilizando el formato estándar de Historias de Usuario (HU) con sus respectivos criterios de aceptación, ajustado a un MVP de 3 meses.
