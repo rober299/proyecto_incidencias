@@ -67,3 +67,10 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 
 - **Bloques 1, 2 y 3:** Levantamiento de requisitos (Funcionales y No Funcionales) y definición de las reglas de negocio estructurales. Creación del diagrama visual de casos de uso para los 3 roles del sistema.
 - **Bloque 4:** Elaboración del Backlog inicial priorizado utilizando el formato estándar de Historias de Usuario (HU) con sus respectivos criterios de aceptación, ajustado a un MVP de 3 meses.
+
+## Jornada 05 - Viernes 13 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Conversión del backlog en un cronograma de 6 Sprints (3 meses), identificando dependencias y riesgos técnicos. Redacción de la guía de estándares del proyecto (nomenclatura, arquitectura BEM, etc.).
+- **Bloques 3 y 4:** Diseño de plantillas de seguimiento diario y revisión del tutor. Creación de la carpeta `semana_1` con la revisión rellena. Limpieza del repositorio y etiquetado (Tag) de la versión base inicial (v1.0.0) cerrando la primera iteración semanal con un proyecto gobernable.
