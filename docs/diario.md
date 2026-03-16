@@ -74,3 +74,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 
 - **Bloques 1 y 2:** Conversión del backlog en un cronograma de 6 Sprints (3 meses), identificando dependencias y riesgos técnicos. Redacción de la guía de estándares del proyecto (nomenclatura, arquitectura BEM, etc.).
 - **Bloques 3 y 4:** Diseño de plantillas de seguimiento diario y revisión del tutor. Creación de la carpeta `semana_1` con la revisión rellena. Limpieza del repositorio y etiquetado (Tag) de la versión base inicial (v1.0.0) cerrando la primera iteración semanal con un proyecto gobernable.
+
+## Jornada 06 - Lunes 16 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Planteamiento lógico de tres algoritmos fundamentales del proyecto (validación de usuario, cálculo de prioridad y filtrado de tickets) empleando pseudocódigo y tablas de decisión.
+- **Bloque 3:** Implementación de las soluciones en Java, asegurando el uso de nombres semánticos y métodos independientes sin entradas manuales por consola.
+- **Bloque 4:** Refactorización del código inicial aplicando principios de Clean Code, condensando validaciones lógicas y separando estrictamente la capa de lógica de la capa de presentación (salida por consola). Se han generado las capturas de ejecución y el informe correspondientes.
