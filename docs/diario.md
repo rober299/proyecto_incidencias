@@ -82,3 +82,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Planteamiento lógico de tres algoritmos fundamentales del proyecto (validación de usuario, cálculo de prioridad y filtrado de tickets) empleando pseudocódigo y tablas de decisión.
 - **Bloque 3:** Implementación de las soluciones en Java, asegurando el uso de nombres semánticos y métodos independientes sin entradas manuales por consola.
 - **Bloque 4:** Refactorización del código inicial aplicando principios de Clean Code, condensando validaciones lógicas y separando estrictamente la capa de lógica de la capa de presentación (salida por consola). Se han generado las capturas de ejecución y el informe correspondientes.
+
+## Jornada 07 - Martes 17 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se han identificado las entidades principales del proyecto (Usuario, Rol, Activo, Incidencia, etc.) y se han definido sus atributos clave y restricciones iniciales en una tabla de análisis.
+- **Bloque 2:** Implementación del modelo de dominio en Java. Se han creado las clases `Usuario` e `Incidencia` aplicando encapsulación estricta (atributos privados) y validaciones en los constructores/setters. Se han añadido métodos de negocio con responsabilidad única (`asignarTecnico`, `cerrarIncidencia`).
+- **Bloque 3:** Desarrollo de una aplicación de consola funcional para probar la instanciación de objetos. Se han ejecutado cuatro escenarios: alta de incidencia, asignación, cierre y captura de errores por datos inválidos.
+- **Bloque 4:** Creación del diagrama de clases version 1 en formato visual reflejando las multiplicidades y relaciones entre entidades. Además, se han documentado las posibles futuras restricciones lógicas del sistema.
