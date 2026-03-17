@@ -12,3 +12,13 @@
 | **Categoría**  | id, nombre                                                   | Clasificación del problema (Hardware, Software...). |
 | **Adjunto**    | id, urlArchivo, tipo                                         | Archivos subidos a la incidencia.                   |
 | **Auditoría**  | id, accion, fecha, usuarioId                                 | Registro inmutable de cambios críticos.             |
+
+## 2. Diagrama de Clases (Versión 1)
+
+![Diagrama de Clases](../evidencias/semana_2/jornada_2026-03-17/diagrama_clases.png)
+
+## 3. Posibles futuras restricciones
+
+- **Usuarios y Roles:** Un usuario solo podrá tener un rol activo a la vez en el sistema. No se podrá eliminar un rol si existen usuarios vinculados a él.
+- **Incidencias:** Una incidencia no podrá pasar al estado "Cerrada" si previamente no tiene un técnico asignado.
+- **Activos:** Si un activo (hardware/software) está marcado con el estado "Dado de baja", el sistema impedirá que se le asocien nuevas incidencias.
