@@ -91,3 +91,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Implementación del modelo de dominio en Java. Se han creado las clases `Usuario` e `Incidencia` aplicando encapsulación estricta (atributos privados) y validaciones en los constructores/setters. Se han añadido métodos de negocio con responsabilidad única (`asignarTecnico`, `cerrarIncidencia`).
 - **Bloque 3:** Desarrollo de una aplicación de consola funcional para probar la instanciación de objetos. Se han ejecutado cuatro escenarios: alta de incidencia, asignación, cierre y captura de errores por datos inválidos.
 - **Bloque 4:** Creación del diagrama de clases version 1 en formato visual reflejando las multiplicidades y relaciones entre entidades. Además, se han documentado las posibles futuras restricciones lógicas del sistema.
+
+## Jornada 08 - Miércoles 18 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha analizado el modelo de dominio para identificar puntos clave de abstracción, justificando el uso de la clase abstracta `UsuarioBase` y las interfaces `Exportable` y `Notificable`.
+- **Bloque 2:** Implementación de la jerarquía de herencia (`UsuarioBase`, `Tecnico`, `Cliente`) y las interfaces funcionales, asegurando una reutilización real de código y evitando la herencia artificial.
+- **Bloque 3:** Creación de un ejercicio práctico que demuestra el uso del polimorfismo, procesando diferentes tipos de usuarios de forma genérica para exportar datos y enviar notificaciones.
+- **Bloque 4:** Redacción del informe técnico con reflexiones sobre las decisiones de diseño, corrección de defectos estructurales, ventajas/inconvenientes del polimorfismo y actualización del diagrama de clases UML.
