@@ -100,3 +100,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Implementación de la jerarquía de herencia (`UsuarioBase`, `Tecnico`, `Cliente`) y las interfaces funcionales, asegurando una reutilización real de código y evitando la herencia artificial.
 - **Bloque 3:** Creación de un ejercicio práctico que demuestra el uso del polimorfismo, procesando diferentes tipos de usuarios de forma genérica para exportar datos y enviar notificaciones.
 - **Bloque 4:** Redacción del informe técnico con reflexiones sobre las decisiones de diseño, corrección de defectos estructurales, ventajas/inconvenientes del polimorfismo y actualización del diagrama de clases UML.
+
+## Jornada 09 - Jueves 19 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha creado un dataset en memoria utilizando estructuras de datos como `Set` (para evitar categorías duplicadas), `Map` (para búsquedas rápidas en el inventario) y `List` (para incidencias y usuarios).
+- **Bloque 2:** Se han implementado con éxito operaciones de negocio como búsquedas personalizadas, agrupación y conteo por estados, y ordenación por pesos de prioridad numérica.
+- **Bloque 3:** Creación de un método genérico (`<T>`) apoyado en la interfaz `Predicate` para centralizar la lógica de filtrado de cualquier tipo de lista, evitando duplicidad de código.
+- **Bloque 4:** Redacción de la tabla teórica comparando el uso de Listas, Conjuntos, Mapas, Colas y Pilas aplicados a casos de uso concretos del proyecto de incidencias.
