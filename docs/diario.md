@@ -109,3 +109,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se han implementado con éxito operaciones de negocio como búsquedas personalizadas, agrupación y conteo por estados, y ordenación por pesos de prioridad numérica.
 - **Bloque 3:** Creación de un método genérico (`<T>`) apoyado en la interfaz `Predicate` para centralizar la lógica de filtrado de cualquier tipo de lista, evitando duplicidad de código.
 - **Bloque 4:** Redacción de la tabla teórica comparando el uso de Listas, Conjuntos, Mapas, Colas y Pilas aplicados a casos de uso concretos del proyecto de incidencias.
+
+## Jornada 10 - Viernes 20 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha inyectado código defectuoso a propósito en la gestión de incidencias (nulos, divisiones por cero, falta de validaciones).
+- **Bloque 2:** Uso intensivo del depurador de VS Code (breakpoints e inspección de variables en memoria) para localizar el origen exacto de los fallos antes de que reviente la ejecución.
+- **Bloque 3:** Sustitución de los _prints_ sucios por una solución de _logging_ estructurada con formato temporal y niveles de severidad (`INFO`, `ERROR`, `DEBUG`).
+- **Bloque 4:** Refactorización del código mediante la extracción de un método centralizado para validaciones (`esValida`), mejorando la robustez sin alterar la funcionalidad.
