@@ -118,3 +118,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Uso intensivo del depurador de VS Code (breakpoints e inspección de variables en memoria) para localizar el origen exacto de los fallos antes de que reviente la ejecución.
 - **Bloque 3:** Sustitución de los _prints_ sucios por una solución de _logging_ estructurada con formato temporal y niveles de severidad (`INFO`, `ERROR`, `DEBUG`).
 - **Bloque 4:** Refactorización del código mediante la extracción de un método centralizado para validaciones (`esValida`), mejorando la robustez sin alterar la funcionalidad.
+
+## Jornada 11 - Lunes 23 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Redacción del catálogo de validaciones por entidad y definición de los principales errores de negocio.
+- **Bloque 2:** Implementación de clases personalizadas heredando de `RuntimeException` para mapear los errores de dominio (`ValidacionDatosException`, `EstadoInvalidoException`, etc.).
+- **Bloque 3:** Creación de un _script_ de pruebas para forzar estas excepciones y demostrar la separación entre el log técnico y el mensaje amigable de cara al usuario.
+- **Bloque 4:** Refactorización de la clase `GestorIncidencias` del viernes, sustituyendo los retornos improvisados (`return false;`) por una estrategia sólida de lanzamiento y captura de excepciones propias.
