@@ -1,21 +1,15 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-// Clase Logger, centraliza y da formato profesional a los mensajes, evitando prints desordenados.
 class SimpleLogger {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private static void log(String nivel, String mensaje) {
-        String timestamp = LocalDateTime.now().format(formatter);
-        System.out.printf("[%s] [%-5s] %s%n", timestamp, nivel, mensaje);
+        System.out.printf("[%s] [%-5s] %s%n", LocalDateTime.now().format(formatter), nivel, mensaje);
     }
 
     public static void info(String mensaje) {
         log("INFO", mensaje);
-    }
-
-    public static void debug(String mensaje) {
-        log("DEBUG", mensaje);
     }
 
     public static void error(String mensaje) {
@@ -24,58 +18,52 @@ class SimpleLogger {
 }
 
 public class GestorIncidencias {
-
-    // Refactorizacion: extraccion de metodo de validacion
-    private static boolean esValida(int id, String titulo, int urgencia) {
+    private static void validarDatos(int id, String titulo, int urgencia) {
         if (id <= 0) {
-            SimpleLogger.error("Validación fallida: El ID debe ser mayor que 0. Recibido: " + id);
-            return false;
+            throw new ValidacionDatosException("El ID debe ser estrictamente positivo. Recibido: " + id);
         }
         if (titulo == null || titulo.trim().isEmpty()) {
-            SimpleLogger.error("Validación fallida: El título no puede ser nulo o vacío.");
-            return false;
+            throw new ValidacionDatosException("El título de la incidencia no puede ser nulo o estar en blanco.");
         }
-        if (urgencia <= 0) {
-            SimpleLogger.error("Validación fallida: La urgencia debe ser un valor positivo. Recibido: " + urgencia);
-            return false;
+        if (urgencia < 1 || urgencia > 5) {
+            // Reutilizamos ValidacionDatosException para salir del paso si la urgencia no
+            // está en el rango correcto
+            throw new ValidacionDatosException("La urgencia debe estar entre 1 y 5. Recibido: " + urgencia);
         }
-        return true;
     }
 
     public static void registrarIncidencia(int id, String titulo, int urgencia) {
-        SimpleLogger.debug("Iniciando registro para ticket ID: " + id);
+        try {
+            // 1. Centralizamos la validación. Si algo falla, salta directamente al 'catch'.
+            validarDatos(id, titulo, urgencia);
 
-        // 1. Centralizamos la validación antes de hacer nada
-        if (!esValida(id, titulo, urgencia)) {
-            SimpleLogger.error("Operación abortada para el ticket ID: " + id);
-            return;
+            // 2. Si pasamos la validación, procesamos normalmente (el código ya es seguro)
+            String tituloLimpio = titulo.trim().toUpperCase();
+            SimpleLogger.info(
+                    String.format("Incidencia guardada correctamente -> ID: %d | Título: '%s'", id, tituloLimpio));
+
+        } catch (ValidacionDatosException e) {
+            // 3. Capturamos nuestro propio error de negocio de forma elegante
+            SimpleLogger.error("Operación abortada por regla de negocio: " + e.getMessage());
+        } catch (Exception e) {
+            // 4. Paracaídas de emergencia para cualquier otro fallo técnico inesperado
+            SimpleLogger.error("Fallo técnico inesperado: " + e.getMessage());
         }
-
-        // 2. Aquí sabemos que titulo no es null
-        String tituloLimpio = titulo.trim().toUpperCase();
-
-        // 3. Aquí sabemos que urgencia no es 0
-        int prioridad = 100 / urgencia;
-
-        // 4. Mensaje informativo limpio
-        SimpleLogger.info(
-                String.format("Incidencia guardada correctamente -> ID: %d | Título: '%s' | Prioridad Calculada: %d",
-                        id, tituloLimpio, prioridad));
     }
 
     public static void main(String[] args) {
-        SimpleLogger.info("Arrancando sistema de incidencias (Versión Refactorizada)");
+        SimpleLogger.info("Arrancando sistema de incidencias (Refactor V2 con Excepciones)");
 
-        // Caso 1: Falla por ID negativo
+        // Falla por ID negativo (controlado por nuestra excepción)
         registrarIncidencia(-1, "  Pantalla rota  ", 2);
 
-        // Caso 2: Falla por urgencia 0
+        // Falla por urgencia fuera de rango (controlado por nuestra excepción)
         registrarIncidencia(102, "Raton no va", 0);
 
-        // Caso 3: Falla por null
+        // Falla por null (controlado por nuestra excepción)
         registrarIncidencia(103, null, 1);
 
-        // Caso 4: Un caso bueno que debe procesarse perfectamente
+        // Funciona perfecto
         registrarIncidencia(205, " Servidor caido ", 5);
 
         SimpleLogger.info("Proceso finalizado.");
