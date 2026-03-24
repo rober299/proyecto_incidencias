@@ -127,3 +127,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Implementación de clases personalizadas heredando de `RuntimeException` para mapear los errores de dominio (`ValidacionDatosException`, `EstadoInvalidoException`, etc.).
 - **Bloque 3:** Creación de un _script_ de pruebas para forzar estas excepciones y demostrar la separación entre el log técnico y el mensaje amigable de cara al usuario.
 - **Bloque 4:** Refactorización de la clase `GestorIncidencias` del viernes, sustituyendo los retornos improvisados (`return false;`) por una estrategia sólida de lanzamiento y captura de excepciones propias.
+
+## Jornada 12 - Martes 24 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha creado el fichero de configuración `app.properties` para extraer del código duro los parámetros de entorno y rutas, acompañándolo de su documentación.
+- **Bloque 2:** Desarrollo del módulo `GestorCSV` para importar y exportar datos tabulares. Se ha implementado tolerancia a fallos para ignorar líneas corruptas sin interrumpir la ejecución.
+- **Bloque 3:** Creación del módulo `GestorJSON` con un serializador y deserializador manual para transformar objetos Java complejos (Usuarios) a formato de intercambio y viceversa.
+- **Bloque 4:** Redacción de un informe técnico detallando las diferencias, casos de uso ideales y riesgos de utilizar CSV frente a JSON en el proyecto.
