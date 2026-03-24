@@ -1,0 +1,6 @@
+ID,Titulo,Urgencia,Estado
+10,Teclado roto,2,ABIERTA
+XX,Fallo servidor,5,CRITICA
+12,Falta un campo,1
+13,Virus detectado,cinco,ABIERTA
+14,Cable pelado,2,EN_PROGRESO
