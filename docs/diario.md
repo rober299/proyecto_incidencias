@@ -136,3 +136,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Desarrollo del módulo `GestorCSV` para importar y exportar datos tabulares. Se ha implementado tolerancia a fallos para ignorar líneas corruptas sin interrumpir la ejecución.
 - **Bloque 3:** Creación del módulo `GestorJSON` con un serializador y deserializador manual para transformar objetos Java complejos (Usuarios) a formato de intercambio y viceversa.
 - **Bloque 4:** Redacción de un informe técnico detallando las diferencias, casos de uso ideales y riesgos de utilizar CSV frente a JSON en el proyecto.
+
+## Jornada 13 - Miércoles 25 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se han seleccionado los métodos críticos del dominio (cálculo de prioridad, estados, validación y roles) y se han diseñado casos de prueba concretos (escenarios normales y de error).
+- **Bloque 2:** Ante la decisión de no incluir librerías externas pesadas, se ha construido un Test Runner propio para ejecutar pruebas unitarias automatizadas con aserciones precisas.
+- **Bloque 3:** Ejecución de la batería de pruebas, detectando y documentando un bug real en el cálculo matemático de la prioridad (una suma en lugar de una multiplicación).
+- **Bloque 4:** Elaboración de la tabla de cobertura funcional mínima, mapeando las áreas seguras del código y las pendientes para futuras iteraciones.
