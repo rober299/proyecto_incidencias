@@ -145,3 +145,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Ante la decisión de no incluir librerías externas pesadas, se ha construido un Test Runner propio para ejecutar pruebas unitarias automatizadas con aserciones precisas.
 - **Bloque 3:** Ejecución de la batería de pruebas, detectando y documentando un bug real en el cálculo matemático de la prioridad (una suma en lugar de una multiplicación).
 - **Bloque 4:** Elaboración de la tabla de cobertura funcional mínima, mapeando las áreas seguras del código y las pendientes para futuras iteraciones.
+
+## Jornada 14 - Jueves 26 de marzo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se seleccionó el validador de transiciones de estado como módulo acotado para aplicar TDD, definiendo claramente sus reglas de negocio.
+- **Bloque 2:** Se ejecutó la fase Roja (escribir tests que fallan al principio) y la fase Verde (implementar la lógica mínima de los `if` para que los tests pasaran con éxito), generando las capturas correspondientes.
+- **Bloque 3:** Se refactorizó el código del validador para mejorar su legibilidad mediante variables booleanas, validando que los tests seguían pasando correctamente.
+- **Bloque 4:** Se redactó un informe técnico con el histórico de pasos, lecciones aprendidas, ventajas y dificultades de aplicar el ciclo TDD en el proyecto integrador.
