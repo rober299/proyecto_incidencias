@@ -154,3 +154,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se ejecutó la fase Roja (escribir tests que fallan al principio) y la fase Verde (implementar la lógica mínima de los `if` para que los tests pasaran con éxito), generando las capturas correspondientes.
 - **Bloque 3:** Se refactorizó el código del validador para mejorar su legibilidad mediante variables booleanas, validando que los tests seguían pasando correctamente.
 - **Bloque 4:** Se redactó un informe técnico con el histórico de pasos, lecciones aprendidas, ventajas y dificultades de aplicar el ciclo TDD en el proyecto integrador.
+
+## Jornada 16 - Lunes 6 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 2:** Se releyeron los requisitos (v1) y el modelo de dominio. Se generó un diccionario de datos estableciendo 8 entidades claras y traduciendo la herencia de objetos a claves foráneas.
+- **Bloque 3:** Se establecieron reglas de persistencia estrictas: borrado lógico (`activo` en Usuarios y Activos), `NOT NULL` en campos obligatorios (título, categoría) y tabla de auditoría inmutable.
+- **Bloque 4:** Se dibujó y exportó el Modelo Entidad-Relación v1 reflejando la arquitectura final que soportará el negocio.
