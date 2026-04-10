@@ -162,3 +162,19 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1 y 2:** Se releyeron los requisitos (v1) y el modelo de dominio. Se generó un diccionario de datos estableciendo 8 entidades claras y traduciendo la herencia de objetos a claves foráneas.
 - **Bloque 3:** Se establecieron reglas de persistencia estrictas: borrado lógico (`activo` en Usuarios y Activos), `NOT NULL` en campos obligatorios (título, categoría) y tabla de auditoría inmutable.
 - **Bloque 4:** Se dibujó y exportó el Modelo Entidad-Relación v1 reflejando la arquitectura final que soportará el negocio.
+
+## Jornada 17 - Martes 7 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se transformó el modelo conceptual ER en un esquema relacional completo, definiendo tipos de datos, PKs y FKs.
+- **Bloques 2 y 3:** Se aplicaron las reglas de normalización (1NF, 2NF, 3NF), detectando posibles anomalías en campos de texto libre (roles, categorías) y extrayéndolos a tablas maestras. Se extrajeron adjuntos y comentarios a tablas transaccionales.
+- **Bloque 4:** Se redactó el informe de normalización, justificando la denormalización intencionada del campo `estado` en la tabla incidencias para priorizar el rendimiento del sistema (evitando JOINs innecesarios), demostrando un diseño usable y no puramente mecánico.
+
+## Jornada 18 - Miércoles 8 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 3:** Se generaron los scripts DDL reproducibles. Se creó un archivo de recreación limpia (`DROP DATABASE`) y el esquema completo respetando estrictamente las restricciones del negocio (NOT NULL, UNIQUE, claves foráneas).
+- **Bloque 2:** Se introdujeron índices de optimización justificados por las necesidades de negocio (filtrado por estado, técnico y orden de prioridad).
+- **Bloque 4:** Se ejecutó el esquema en el gestor de base de datos resolviendo conflictos de dependencias en la creación de FKs, registrando los cambios en la bitácora correspondiente y generando las evidencias visuales.
