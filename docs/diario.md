@@ -178,3 +178,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1 y 3:** Se generaron los scripts DDL reproducibles. Se creó un archivo de recreación limpia (`DROP DATABASE`) y el esquema completo respetando estrictamente las restricciones del negocio (NOT NULL, UNIQUE, claves foráneas).
 - **Bloque 2:** Se introdujeron índices de optimización justificados por las necesidades de negocio (filtrado por estado, técnico y orden de prioridad).
 - **Bloque 4:** Se ejecutó el esquema en el gestor de base de datos resolviendo conflictos de dependencias en la creación de FKs, registrando los cambios en la bitácora correspondiente y generando las evidencias visuales.
+
+## Jornada 19 - Jueves 9 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se creó un script de inserción de datos masiva (DML) para popular las tablas con escenarios coherentes (roles, activos, usuarios, tickets y comentarios).
+- **Bloques 2 y 3:** Se programó una batería de consultas SQL usando `JOIN` y agrupaciones para resolver dudas de negocio. Se aplicaron `UPDATES` condicionales seguros y borrados lógicos sin usar `DELETE`.
+- **Bloque 4:** Se redactó la documentación cruzando las preguntas funcionales de la empresa con la lógica de las sentencias SQL.
