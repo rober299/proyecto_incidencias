@@ -186,3 +186,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1:** Se creó un script de inserción de datos masiva (DML) para popular las tablas con escenarios coherentes (roles, activos, usuarios, tickets y comentarios).
 - **Bloques 2 y 3:** Se programó una batería de consultas SQL usando `JOIN` y agrupaciones para resolver dudas de negocio. Se aplicaron `UPDATES` condicionales seguros y borrados lógicos sin usar `DELETE`.
 - **Bloque 4:** Se redactó la documentación cruzando las preguntas funcionales de la empresa con la lógica de las sentencias SQL.
+
+## Jornada 20 - Viernes 10 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se diseñaron vistas (`v_panel_tecnico` y `v_historico_resueltas`) para facilitar la lectura de datos frecuentes al Frontend.
+- **Bloques 2 y 3:** Se creó el procedimiento almacenado `sp_cerrar_incidencia` para agilizar tareas repetitivas y un trigger `trg_auditoria_estado` que garantiza el registro de auditoría inmutable ante cualquier cambio.
+- **Bloque 4:** Se simuló y documentó una transacción de múltiples pasos (UPDATE en cascada), comprobando el funcionamiento del `ROLLBACK` para asegurar la atomicidad y evitar datos corruptos si falla la capa de aplicación.
