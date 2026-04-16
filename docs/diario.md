@@ -194,3 +194,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1:** Se diseñaron vistas (`v_panel_tecnico` y `v_historico_resueltas`) para facilitar la lectura de datos frecuentes al Frontend.
 - **Bloques 2 y 3:** Se creó el procedimiento almacenado `sp_cerrar_incidencia` para agilizar tareas repetitivas y un trigger `trg_auditoria_estado` que garantiza el registro de auditoría inmutable ante cualquier cambio.
 - **Bloque 4:** Se simuló y documentó una transacción de múltiples pasos (UPDATE en cascada), comprobando el funcionamiento del `ROLLBACK` para asegurar la atomicidad y evitar datos corruptos si falla la capa de aplicación.
+
+## Jornada 21 - Lunes 13 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se configuró la conexión a MySQL unificando las credenciales en el archivo `config/app.properties` existente para no dejar datos sensibles en el código.
+- **Bloques 2 y 3:** Se implementó el patrón DAO en Java separando interfaces (`UsuarioDAO`, `IncidenciaDAO`) de sus implementaciones con JDBC. Se usaron `PreparedStatements` para evitar inyección SQL y se hizo el mapeo manual a objetos puros (POJOs).
+- **Bloque 4:** Se creó y ejecutó la suite `MainPruebas.java` comprobando con éxito la inserción, lectura y borrado lógico de registros en la base de datos desde la aplicación.
