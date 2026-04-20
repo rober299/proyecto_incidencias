@@ -202,3 +202,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1:** Se configuró la conexión a MySQL unificando las credenciales en el archivo `config/app.properties` existente para no dejar datos sensibles en el código.
 - **Bloques 2 y 3:** Se implementó el patrón DAO en Java separando interfaces (`UsuarioDAO`, `IncidenciaDAO`) de sus implementaciones con JDBC. Se usaron `PreparedStatements` para evitar inyección SQL y se hizo el mapeo manual a objetos puros (POJOs).
 - **Bloque 4:** Se creó y ejecutó la suite `MainPruebas.java` comprobando con éxito la inserción, lectura y borrado lógico de registros en la base de datos desde la aplicación.
+
+## Jornada 22 - Martes 14 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se creó la clase `TransaccionService.java` aplicando el bloque `try-with-resources` para garantizar la liberación automática de conexiones y sentencias. Se implementó una transacción manual (`setAutoCommit(false)`) que inserta una incidencia y su registro de auditoría de forma atómica, usando `PreparedStatement` para prevenir la inyección SQL.
+- **Bloque 3:** Se programó la clase `MainJornada22.java` para testear la consistencia de los datos. Se forzó una excepción a mitad de la transacción y se demostró, comparando el número de registros antes y después, que el comando `rollback()` funciona correctamente y no deja datos huérfanos.
+- **Bloque 4:** Se redactó la guía `guia_seguridad_bd.md` resumiendo las medidas implementadas para asegurar la robustez del acceso a datos, incluyendo el cierre de recursos, la prevención de inyecciones SQL y el control de transacciones.
