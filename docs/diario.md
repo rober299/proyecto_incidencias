@@ -210,3 +210,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Se creó la clase `TransaccionService.java` aplicando el bloque `try-with-resources` para garantizar la liberación automática de conexiones y sentencias. Se implementó una transacción manual (`setAutoCommit(false)`) que inserta una incidencia y su registro de auditoría de forma atómica, usando `PreparedStatement` para prevenir la inyección SQL.
 - **Bloque 3:** Se programó la clase `MainJornada22.java` para testear la consistencia de los datos. Se forzó una excepción a mitad de la transacción y se demostró, comparando el número de registros antes y después, que el comando `rollback()` funciona correctamente y no deja datos huérfanos.
 - **Bloque 4:** Se redactó la guía `guia_seguridad_bd.md` resumiendo las medidas implementadas para asegurar la robustez del acceso a datos, incluyendo el cierre de recursos, la prevención de inyecciones SQL y el control de transacciones.
+
+## Jornada 23 - Miércoles 15 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se configuró la unidad de persistencia (`META-INF/persistence.xml`) y se mapearon las entidades `UsuarioORM` e `IncidenciaORM` usando anotaciones JPA (`@Entity`, `@Table`, `@OneToMany`, `@ManyToOne`). Se superaron problemas de compatibilidad configurando manualmente el classpath con las librerías necesarias.
+- **Bloque 2:** Se implementó el patrón Repository con `IncidenciaRepository`, utilizando `EntityManager` y JPQL para ejecutar consultas (por estado y por técnico) sin escribir SQL nativo.
+- **Bloques 3 y 4:** Se redactó un informe técnico (`docs/informe_orm_vs_jdbc.md`) elaborando una tabla comparativa exhaustiva entre JDBC puro y ORM, analizando rendimiento y cantidad de código.
