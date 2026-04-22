@@ -1,0 +1,12 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Ejecutar Hibernate",
+            "request": "launch",
+            "mainClass": "orm.MainJornada23",
+            "vmArgs": "--add-opens java.base/java.lang=ALL-UNNAMED"
+        }
+    ]
+}
