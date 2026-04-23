@@ -218,3 +218,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1:** Se configuró la unidad de persistencia (`META-INF/persistence.xml`) y se mapearon las entidades `UsuarioORM` e `IncidenciaORM` usando anotaciones JPA (`@Entity`, `@Table`, `@OneToMany`, `@ManyToOne`). Se superaron problemas de compatibilidad configurando manualmente el classpath con las librerías necesarias.
 - **Bloque 2:** Se implementó el patrón Repository con `IncidenciaRepository`, utilizando `EntityManager` y JPQL para ejecutar consultas (por estado y por técnico) sin escribir SQL nativo.
 - **Bloques 3 y 4:** Se redactó un informe técnico (`docs/informe_orm_vs_jdbc.md`) elaborando una tabla comparativa exhaustiva entre JDBC puro y ORM, analizando rendimiento y cantidad de código.
+
+## Jornada 24 - Jueves 16 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha creado la capa `IncidenciaService` para aislar la lógica de negocio. Se han implementado los casos de uso transaccionales requeridos: registrar incidencia, asignar técnico, listar pendientes y cerrar con comentario, garantizando el uso de `em.getTransaction().begin()` y `commit()`.
+- **Bloque 2:** Se amplió `IncidenciaRepository` implementando un buscador dinámico en JPQL que soporta filtros por estado, prioridad, texto libre (LIKE), categoría y relaciones de usuario. Se integró paginación nativa usando la API de JPA (`setFirstResult` / `setMaxResults`).
+- **Bloque 3:** Se definió `IncidenciaResumenDTO` para evitar exponer la entidad `IncidenciaORM` (y su relación con `UsuarioORM`) en las capas de presentación, justificando la selección de campos (ID, título, estado y email).
+- **Bloque 4:** Se realizaron pruebas funcionales a través del controlador (`MainJornada24`), comprobando que el rendimiento de las consultas paginadas es óptimo y verificando que el controlador se comunica exclusivamente con el Servicio, sin conocer la existencia del DAO/Repositorio.
