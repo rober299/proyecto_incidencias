@@ -27,6 +27,7 @@ public class IncidenciaORM {
     public IncidenciaORM() {
     }
 
+    // --- GETTERS EXISTENTES ---
     public int getIdIncidencia() {
         return idIncidencia;
     }
@@ -41,5 +42,18 @@ public class IncidenciaORM {
 
     public UsuarioORM getCreador() {
         return creador;
+    }
+
+    // --- LOS MÉTODOS QUE FALTABAN PARA EL SERVICIO ---
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }

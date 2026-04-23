@@ -1,0 +1,6 @@
+{
+  "java.debug.settings.vmArgs": "--add-opens java.base/java.lang=ALL-UNNAMED",
+  "java.project.referencedLibraries": [
+    "lib/**/*.jar"
+  ]
+}
