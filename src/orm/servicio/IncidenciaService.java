@@ -44,6 +44,12 @@ public class IncidenciaService {
             }
             IncidenciaORM nueva = new IncidenciaORM();
             nueva.setEstado("Abierto");
+            nueva.setTitulo(titulo);
+            nueva.setDescripcion(descripcion);
+            nueva.setCreador(creador); // Asignamos el creador para que no dé el error de NULL
+            nueva.setIdCategoria(1); // Categoría por defecto para que la BD lo acepte
+            nueva.setPrioridad(1); // Prioridad por defecto para que la BD lo acepte
+
             em.persist(nueva);
             em.getTransaction().commit();
             return true;

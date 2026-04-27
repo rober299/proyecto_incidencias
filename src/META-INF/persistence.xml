@@ -1,4 +1,5 @@
 <persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    
     <persistence-unit name="IncidenciasPU" transaction-type="RESOURCE_LOCAL">
         <class>orm.UsuarioORM</class>
         <class>orm.IncidenciaORM</class>
@@ -10,4 +11,17 @@
             <property name="hibernate.show_sql" value="true" />
         </properties>
     </persistence-unit>
+
+    <persistence-unit name="IncidenciasTestPU" transaction-type="RESOURCE_LOCAL">
+        <class>orm.UsuarioORM</class>
+        <class>orm.IncidenciaORM</class>
+        <properties>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/proyecto_incidencias_test?useSSL=false&amp;allowPublicKeyRetrieval=true"/>
+            <property name="javax.persistence.jdbc.user" value="root" />
+            <property name="javax.persistence.jdbc.password" value="PONER_CONTRASEÑA" />
+            <property name="hibernate.show_sql" value="false" />
+        </properties>
+    </persistence-unit>
+
 </persistence>

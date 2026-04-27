@@ -44,7 +44,6 @@ public class IncidenciaORM {
         return creador;
     }
 
-    // --- LOS MÉTODOS QUE FALTABAN PARA EL SERVICIO ---
     public String getDescripcion() {
         return descripcion;
     }
@@ -55,5 +54,21 @@ public class IncidenciaORM {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public void setCreador(UsuarioORM creador) {
+        this.creador = creador;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+
+    public void setPrioridad(int prioridad) {
+        this.prioridad = prioridad;
     }
 }
