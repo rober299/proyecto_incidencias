@@ -236,3 +236,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se elaboró el script `init_test_env.sql` que actúa como fixture, reseteando la estructura e inyectando datos semilla (usuarios y roles) para arrancar los test desde un estado predecible y eliminando la dependencia de estados manuales.
 - **Bloque 3:** Se codificó `MainJornada25_Integracion.java`, validando flujos de negocio end-to-end (alta, listado, asignación y cierre), confirmando la robustez de las transacciones de Hibernate y asegurando que las reglas del `IncidenciaService` se reflejan en la base de datos de pruebas.
 - **Bloque 4:** Se redactó la documentación técnica obligatoria, incluyendo la guía de reconstrucción del entorno y la tabla de verificación de los escenarios, dejando la capa de persistencia validada y preparada para la fase web.
+
+## Jornada 26 - Lunes 20 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se diseñó e implementó la maqueta inicial de las 5 vistas requeridas: login, dashboard, listado, detalle y alta.
+- **Bloque 2:** Se garantizó un HTML estrictamente semántico usando etiquetas nativas de HTML5, evitando el uso excesivo de `divs` y estructurando lógicamente el contenido.
+- **Bloque 3:** Se superó el checklist de accesibilidad verificando labels, jerarquías de título y propiedades ARIA para navegación.
+- **Bloque 4:** Se modularizó el directorio frontend separando vistas, css, js y assets, dejando el proyecto escalable y documentando la decisión técnica para el tutor.

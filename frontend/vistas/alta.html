@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nueva Incidencia</title>
+</head>
+<body>
+    <header>
+        <h1>Registrar Nueva Incidencia</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="listado.html">Ver Incidencias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="form-title">
+            <h2 id="form-title">Formulario de Alta</h2>
+            <form action="listado.html" method="POST">
+                <div>
+                    <label for="incidencia-titulo">Título breve:</label>
+                    <input type="text" id="incidencia-titulo" name="titulo" required>
+                </div>
+                
+                <div>
+                    <label for="incidencia-categoria">Categoría:</label>
+                    <select id="incidencia-categoria" name="categoria" required>
+                        <option value="hardware">Hardware</option>
+                        <option value="software">Software</option>
+                        <option value="redes">Redes</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="incidencia-desc">Descripción detallada:</label>
+                    <textarea id="incidencia-desc" name="descripcion" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">Crear Ticket</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Incidencias</title>
+</head>
+<body>
+    <header>
+        <h1>Listado de Incidencias</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="listado.html" aria-current="page">Ver Incidencias</a></li>
+                <li><a href="alta.html">Nueva Incidencia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="tabla-title">
+            <h2 id="tabla-title">Incidencias Activas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Prioridad</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Fallo conexión VPN</td>
+                        <td>Abierto</td>
+                        <td>Alta</td>
+                        <td><a href="detalle.html" aria-label="Ver detalles de la incidencia 101">Ver Detalles</a></td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>Impresora sin tóner</td>
+                        <td>En Progreso</td>
+                        <td>Baja</td>
+                        <td><a href="detalle.html" aria-label="Ver detalles de la incidencia 102">Ver Detalles</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>

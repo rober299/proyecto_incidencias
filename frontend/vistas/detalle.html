@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Incidencia</title>
+</head>
+<body>
+    <header>
+        <h1>Detalle de la Incidencia #101</h1>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="listado.html">Volver al Listado</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>Fallo conexión VPN</h2>
+                <p>Reportado por: <strong>usuario@empresa.com</strong> | Fecha: <time datetime="2026-04-20">20 de abril, 2026</time></p>
+            </header>
+            
+            <section aria-labelledby="desc-title">
+                <h3 id="desc-title">Descripción</h3>
+                <p>Al intentar acceder a la red local desde casa, el cliente Cisco AnyConnect devuelve el error 404 y se cierra inesperadamente.</p>
+            </section>
+
+            <section aria-labelledby="estado-title">
+                <h3 id="estado-title">Gestión técnica</h3>
+                <form action="#" method="POST">
+                    <label for="cambio-estado">Actualizar estado:</label>
+                    <select id="cambio-estado" name="estado">
+                        <option value="Abierto">Abierto</option>
+                        <option value="Progreso">En Progreso</option>
+                        <option value="Cerrado">Cerrado</option>
+                    </select>
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
