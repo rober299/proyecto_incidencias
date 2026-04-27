@@ -227,3 +227,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se amplió `IncidenciaRepository` implementando un buscador dinámico en JPQL que soporta filtros por estado, prioridad, texto libre (LIKE), categoría y relaciones de usuario. Se integró paginación nativa usando la API de JPA (`setFirstResult` / `setMaxResults`).
 - **Bloque 3:** Se definió `IncidenciaResumenDTO` para evitar exponer la entidad `IncidenciaORM` (y su relación con `UsuarioORM`) en las capas de presentación, justificando la selección de campos (ID, título, estado y email).
 - **Bloque 4:** Se realizaron pruebas funcionales a través del controlador (`MainJornada24`), comprobando que el rendimiento de las consultas paginadas es óptimo y verificando que el controlador se comunica exclusivamente con el Servicio, sin conocer la existencia del DAO/Repositorio.
+
+## Jornada 25 - Viernes 17 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se configuró un entorno de base de datos completamente aislado (`proyecto_incidencias_test`) mediante la adición de la unidad `IncidenciasTestPU` en el `persistence.xml`, previniendo la contaminación cruzada de datos con el entorno de desarrollo.
+- **Bloque 2:** Se elaboró el script `init_test_env.sql` que actúa como fixture, reseteando la estructura e inyectando datos semilla (usuarios y roles) para arrancar los test desde un estado predecible y eliminando la dependencia de estados manuales.
+- **Bloque 3:** Se codificó `MainJornada25_Integracion.java`, validando flujos de negocio end-to-end (alta, listado, asignación y cierre), confirmando la robustez de las transacciones de Hibernate y asegurando que las reglas del `IncidenciaService` se reflejan en la base de datos de pruebas.
+- **Bloque 4:** Se redactó la documentación técnica obligatoria, incluyendo la guía de reconstrucción del entorno y la tabla de verificación de los escenarios, dejando la capa de persistencia validada y preparada para la fase web.
