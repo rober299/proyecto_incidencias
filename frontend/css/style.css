@@ -1,0 +1,190 @@
+/* GUÍA VISUAL BÁSICA - Variables CSS */
+:root {
+    /* Paleta de colores */
+    --primary-color: #0056b3;      /* Azul corporativo */
+    --secondary-color: #e9ecef;    /* Gris claro para fondos */
+    --text-color: #333333;         /* Texto principal oscuro pero no negro puro */
+    --danger-color: #dc3545;       /* Rojo para errores o alertas */
+    --success-color: #28a745;      /* Verde para éxitos */
+    --white: #ffffff;
+    
+    /* Tipografías y espaciados */
+    --font-main: system-ui, -apple-system, sans-serif;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 6px;
+}
+
+/* RESETEO BÁSICO Y ESTILOS GLOBALES */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* CABECERA Y NAVEGACIÓN (FLEXBOX)*/
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que caiga en móviles */
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s;
+}
+
+nav a:hover, nav a[aria-current="page"] {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* CONTENEDOR PRINCIPAL Y TARJETAS (GRID)*/
+main {
+    flex: 1; /* Empuja el footer hacia abajo */
+    padding: var(--spacing-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+main section {
+    background-color: var(--white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Layout en Grid para el Dashboard */
+section:has(article) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+}
+
+article {
+    background-color: var(--secondary-color);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* FORMULARIOS Y BOTONES*/
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    max-width: 500px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+input, select, textarea {
+    padding: var(--spacing-sm);
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-family: inherit;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: var(--spacing-sm);
+}
+
+button:hover {
+    background-color: #004494;
+}
+
+/* TABLAS*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-md);
+}
+
+th, td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--secondary-color);
+}
+
+/* DISEÑO RESPONSIVE - Móviles y Tablets*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+    }
+    
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    nav a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Permite scroll horizontal en la tabla en móviles para no romper la web */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    form {
+        max-width: 100%; /* El formulario ocupa todo el ancho en móvil */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-md);
+    background-color: var(--text-color);
+    color: var(--white);
+}
