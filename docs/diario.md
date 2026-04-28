@@ -254,3 +254,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se programó el archivo `style.css` aplicando selectores semánticos (evitando la "div-itis") y dotando de coherencia gráfica a los formularios, tablas y tarjetas del dashboard usando Flexbox y CSS Grid.
 - **Bloque 3:** Se añadió comportamiento Responsive mediante Media Queries (`max-width: 768px`). La navegación se colapsa en vertical y las tablas adquieren scroll horizontal preventivo para evitar roturas de layout en móviles.
 - **Bloque 4:** Se inspeccionó el resultado final en navegador y se documentó el listado de mejoras de UI pendientes para futuras iteraciones de frontend.
+
+## Jornada 28 - Miércoles 8 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se definieron y programaron las validaciones de cliente para login y alta, controlando formatos (regex de email) y longitudes mínimas para evitar peticiones vacías.
+- **Bloque 2:** Se implementó manipulación directa del DOM usando Vanilla JS. Se alternaron clases CSS para el pintado de errores, se previno el comportamiento por defecto de los envíos (`e.preventDefault()`) y se crearon paneles dinámicos de éxito.
+- **Bloque 3:** Se reemplazó la tabla de HTML estático por un renderizado dinámico (`listado_dinamico.js`), inyectando nodos DOM desde un JSON simulado que imita la futura respuesta del backend.
+- **Bloque 4:** Se redactó la justificación técnica de la división de responsabilidades entre cliente y servidor, documentando el límite de seguridad del frontend.
