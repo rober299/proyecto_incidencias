@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="incidencias">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="incidencia" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo" type="xs:string"/>
+                            <xs:element name="categoria" type="xs:string"/>
+                            <xs:element name="descripcion" type="xs:string"/>
+                            <xs:element name="creador">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"/>
+                                        <xs:element name="email" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="tecnico_asignado" type="xs:string" minOccurs="0"/>
+                            <xs:element name="fecha_creacion" type="xs:date"/>
+                        </xs:sequence>
+                        
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                        <xs:attribute name="estado" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Abierto"/>
+                                    <xs:enumeration value="En Progreso"/>
+                                    <xs:enumeration value="Cerrado"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="prioridad" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="Baja"/>
+                                    <xs:enumeration value="Media"/>
+                                    <xs:enumeration value="Alta"/>
+                                    <xs:enumeration value="Critica"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

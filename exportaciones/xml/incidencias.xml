@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transformacion.xslt"?>
+<incidencias xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="incidencias.xsd">
+    
+    <incidencia id="101" estado="Abierto" prioridad="Alta">
+        <titulo>Fallo conexión VPN</titulo>
+        <categoria>Redes</categoria>
+        <descripcion>El cliente Cisco AnyConnect devuelve el error 404 y se cierra.</descripcion>
+        <creador>
+            <nombre>Carlos Pérez</nombre>
+            <email>carlos@empresa.com</email>
+        </creador>
+        <tecnico_asignado>robert.chislea@soporte.com</tecnico_asignado>
+        <fecha_creacion>2026-04-23</fecha_creacion>
+    </incidencia>
+
+    <incidencia id="102" estado="En Progreso" prioridad="Baja">
+        <titulo>Impresora sin tóner</titulo>
+        <categoria>Hardware</categoria>
+        <descripcion>La impresora de la planta 2 marca nivel bajo de tinta negra.</descripcion>
+        <creador>
+            <nombre>Ana Gómez</nombre>
+            <email>ana@empresa.com</email>
+        </creador>
+        <tecnico_asignado>robert.chislea@soporte.com</tecnico_asignado>
+        <fecha_creacion>2026-04-23</fecha_creacion>
+    </incidencia>
+
+    <incidencia id="103" estado="Cerrado" prioridad="Critica">
+        <titulo>Caída del servidor principal</titulo>
+        <categoria>Sistemas</categoria>
+        <descripcion>El servidor de base de datos no responde a los pings.</descripcion>
+        <creador>
+            <nombre>Sistema de Alertas</nombre>
+            <email>alertas@empresa.com</email>
+        </creador>
+        <tecnico_asignado>admin@soporte.com</tecnico_asignado>
+        <fecha_creacion>2026-04-23</fecha_creacion>
+    </incidencia>
+
+</incidencias>
