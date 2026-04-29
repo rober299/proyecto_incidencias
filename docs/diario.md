@@ -263,3 +263,12 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se implementó manipulación directa del DOM usando Vanilla JS. Se alternaron clases CSS para el pintado de errores, se previno el comportamiento por defecto de los envíos (`e.preventDefault()`) y se crearon paneles dinámicos de éxito.
 - **Bloque 3:** Se reemplazó la tabla de HTML estático por un renderizado dinámico (`listado_dinamico.js`), inyectando nodos DOM desde un JSON simulado que imita la futura respuesta del backend.
 - **Bloque 4:** Se redactó la justificación técnica de la división de responsabilidades entre cliente y servidor, documentando el límite de seguridad del frontend.
+
+## Jornada 29 - Jueves 9 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se diseñó un documento XML estructurado (`incidencias.xml`) utilizando atributos (`id`, `estado`, `prioridad`) para metadatos y nodos internos para la información descriptiva del ticket.
+- **Bloque 2:** Se implementó un esquema de validación estricto (`incidencias.xsd`) para tipificar los datos (enteros, fechas) y restringir estados mediante enumeraciones.
+- **Bloque 3:** Se formularon y documentaron expresiones XPath para la extracción quirúrgica de datos del árbol XML.
+- **Bloque 4:** Se programó una hoja de transformación XSLT (`transformacion.xslt`) que convierte el XML en un reporte HTML dinámico, utilizando condicionales (`xsl:if`) para aplicar estilos visuales a incidencias críticas o urgentes.
