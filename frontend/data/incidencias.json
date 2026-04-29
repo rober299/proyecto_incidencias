@@ -1,0 +1,23 @@
+[
+    {
+        "id": 101,
+        "titulo": "Fallo conexión VPN",
+        "estado": "Abierto",
+        "prioridad": "Alta",
+        "tecnicoAsignado": "robert.chislea@soporte.com"
+    },
+    {
+        "id": 102,
+        "titulo": "Impresora sin tóner",
+        "estado": "En Progreso",
+        "prioridad": "Baja",
+        "tecnicoAsignado": "robert.chislea@soporte.com"
+    },
+    {
+        "id": 103,
+        "titulo": "Caída del servidor principal",
+        "estado": "Cerrado",
+        "prioridad": "Crítica",
+        "tecnicoAsignado": "admin@soporte.com"
+    }
+]
