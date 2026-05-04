@@ -255,7 +255,7 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 3:** Se añadió comportamiento Responsive mediante Media Queries (`max-width: 768px`). La navegación se colapsa en vertical y las tablas adquieren scroll horizontal preventivo para evitar roturas de layout en móviles.
 - **Bloque 4:** Se inspeccionó el resultado final en navegador y se documentó el listado de mejoras de UI pendientes para futuras iteraciones de frontend.
 
-## Jornada 28 - Miércoles 8 de abril de 2026
+## Jornada 28 - Miércoles 22 de abril de 2026
 
 ### 📝 Resumen del día
 
@@ -264,7 +264,7 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 3:** Se reemplazó la tabla de HTML estático por un renderizado dinámico (`listado_dinamico.js`), inyectando nodos DOM desde un JSON simulado que imita la futura respuesta del backend.
 - **Bloque 4:** Se redactó la justificación técnica de la división de responsabilidades entre cliente y servidor, documentando el límite de seguridad del frontend.
 
-## Jornada 29 - Jueves 9 de abril de 2026
+## Jornada 29 - Jueves 23 de abril de 2026
 
 ### 📝 Resumen del día
 
@@ -272,3 +272,21 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se implementó un esquema de validación estricto (`incidencias.xsd`) para tipificar los datos (enteros, fechas) y restringir estados mediante enumeraciones.
 - **Bloque 3:** Se formularon y documentaron expresiones XPath para la extracción quirúrgica de datos del árbol XML.
 - **Bloque 4:** Se programó una hoja de transformación XSLT (`transformacion.xslt`) que convierte el XML en un reporte HTML dinámico, utilizando condicionales (`xsl:if`) para aplicar estilos visuales a incidencias críticas o urgentes.
+
+## Jornada 30 - Viernes 24 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se definieron los contratos JSON iniciales para las operaciones CRUD principales, estandarizando nombres en camelCase.
+- **Bloque 2:** Se configuró el frontend para consumir datos asíncronamente mediante la API `fetch`, separando definitivamente la capa de presentación de los datos.
+- **Bloque 3:** Se realizó un análisis de exposición de datos (Modelo vs DTO), determinando qué campos sensibles de la base de datos (como contraseñas o flags internos) deben ocultarse en las respuestas de la API.
+- **Bloque 4:** Se redactó la especificación preliminar de los endpoints que servirán de guía para construir el backend RESTful la próxima semana.
+
+## Jornada 31 - Lunes 27 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se realizó un análisis profundo de los perfiles de usuario (Administrador, Técnico, Solicitante), detallando tareas y frecuencia de uso.
+- **Bloque 2:** Se diseñó un mapa de flujos (Mermaid) y wireframes funcionales en formato ASCII para las pantallas clave (Dashboard y Detalles), enfocados en la disposición de los datos.
+- **Bloque 3:** Se auditaron los wireframes detectando fricciones de uso, proponiendo soluciones como botones de acción rápida, autocompletado y notificaciones _toast_.
+- **Bloque 4:** Se volcaron las mejoras de interfaz detectadas al `backlog.md` para su futura implementación.
