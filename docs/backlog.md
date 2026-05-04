@@ -11,3 +11,9 @@ A continuación se detallan las Historias de Usuario (HU) priorizadas para el de
 | **HU-05** |   Media   | **Como** Técnico,<br>**quiero** cambiar el estado de un ticket a "En Progreso" o "Resuelto",<br>**para** mantener informado al usuario del avance.     | - Solo un técnico asignado puede cambiar el estado.<br>- Si pasa a "Resuelto", exige un comentario final.                                |
 | **HU-06** |   Media   | **Como** Usuario,<br>**quiero** poder adjuntar una captura de pantalla al crear el ticket,<br>**para** que el técnico entienda mejor el fallo.         | - Solo permite formatos de imagen (.png, .jpg).<br>- El tamaño máximo es de 5MB.                                                         |
 | **HU-07** |   Baja    | **Como** Administrador,<br>**quiero** exportar el listado de tickets resueltos a CSV,<br>**para** hacer informes mensuales de rendimiento.             | - El archivo CSV se descarga con un clic.<br>- Incluye tiempo de resolución.                                                             |
+
+## Tareas de Mejora de Interfaz (UX) - Jornada 31
+
+- [ ] UX-01: Añadir botones de "Acción Rápida" (cambio de estado) en las tarjetas del listado de incidencias.
+- [ ] UX-02: Programar script para autocompletar nombre/email en el formulario de alta según el usuario en sesión.
+- [ ] UX-03: Diseñar e implementar componente visual de Notificaciones Toast para feedback del sistema.
