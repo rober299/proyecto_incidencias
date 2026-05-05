@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Resumen</title>
+    <title>Dashboard - Sistema de Incidencias</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/design_system.css">
 </head>
-<body>
-    <header>
-        <h1>Panel de Control</h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
-                <li><a href="listado.html">Ver Incidencias</a></li>
-                <li><a href="alta.html">Nueva Incidencia</a></li>
-                <li><a href="login.html">Cerrar Sesión</a></li>
-            </ul>
+<body style="background-color: #f4f6f9; font-family: Arial, sans-serif; margin: 0;">
+
+    <header style="background-color: #0056b3; padding: 20px; display: flex; justify-content: space-between; align-items: center; color: white;">
+        <div style="font-size: 24px; font-weight: bold;">Panel de Control</div>
+        <nav style="display: flex; gap: 20px;">
+            <a href="alta.html" style="color: white; text-decoration: none; font-weight: bold;">Nueva Incidencia</a>
+            <a href="listado.html" style="color: white; text-decoration: none; font-weight: bold;">Ver Incidencias</a>
+            <a href="login.html" style="color: white; text-decoration: none; font-weight: bold;">Cerrar Sesión</a>
         </nav>
     </header>
 
-    <main>
-        <section aria-labelledby="resumen-title">
-            <h2 id="resumen-title">Resumen del Sistema</h2>
-            <article>
-                <h3>Incidencias Pendientes</h3>
-                <p>Total: <strong>14</strong></p>
-            </article>
-            <article>
-                <h3>Incidencias Resueltas (Hoy)</h3>
-                <p>Total: <strong>5</strong></p>
-            </article>
-        </section>
-    </main>
+    <div style="padding: 20px;">
+        
+        <div id="stats-container" class="dashboard-grid">
+        </div>
+
+        <h2 style="color: #333; margin-top: 20px;">Incidencias Recientes</h2>
+        
+        <!-- Contenedor para la tabla -->
+        <table class="ui-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Estado</th>
+                    <th>Prioridad</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-recientes">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="../js/componentes.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>
