@@ -290,3 +290,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se diseñó un mapa de flujos (Mermaid) y wireframes funcionales en formato ASCII para las pantallas clave (Dashboard y Detalles), enfocados en la disposición de los datos.
 - **Bloque 3:** Se auditaron los wireframes detectando fricciones de uso, proponiendo soluciones como botones de acción rápida, autocompletado y notificaciones _toast_.
 - **Bloque 4:** Se volcaron las mejoras de interfaz detectadas al `backlog.md` para su futura implementación.
+
+## Jornada 32 - Martes 28 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 2:** Se ha diseñado e implementado una Interfaz Rica de escritorio utilizando Java Swing (`VistaAdmin.java`), incluyendo componentes clave como `JTable`, `JButton` y cuadros de diálogo (`JOptionPane`) para la validación de usuario.
+- **Bloque 3:** Se aplicó estrictamente el patrón de diseño MVC, aislando la lógica de negocio en `ControladorAdmin.java`. Se implementaron ActionListeners para modificar el estado de los datos simulados sin acoplar la vista.
+- **Bloque 4:** Se redactó un documento comparativo técnico analizando las ventajas, limitaciones y casos de uso óptimos entre clientes de escritorio (stateful, alta productividad) y clientes web (stateless, alta accesibilidad).
