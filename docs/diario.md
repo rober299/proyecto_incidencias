@@ -298,3 +298,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1 y 2:** Se ha diseñado e implementado una Interfaz Rica de escritorio utilizando Java Swing (`VistaAdmin.java`), incluyendo componentes clave como `JTable`, `JButton` y cuadros de diálogo (`JOptionPane`) para la validación de usuario.
 - **Bloque 3:** Se aplicó estrictamente el patrón de diseño MVC, aislando la lógica de negocio en `ControladorAdmin.java`. Se implementaron ActionListeners para modificar el estado de los datos simulados sin acoplar la vista.
 - **Bloque 4:** Se redactó un documento comparativo técnico analizando las ventajas, limitaciones y casos de uso óptimos entre clientes de escritorio (stateful, alta productividad) y clientes web (stateless, alta accesibilidad).
+
+## Jornada 33 - Miércoles 29 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se ha implementado un Dashboard web funcional. Se ha diseñado un archivo `design_system.css` con variables y clases reutilizables, y una librería `componentes.js` que genera HTML dinámico (Cards, Badges, Tablas).
+- **Bloque 3:** Se ha garantizado la consistencia visual, asegurando que todos los estados (Ej. "Abierto" = Rojo, "Resuelto" = Verde) comparten exactamente las mismas reglas CSS y funciones de renderizado, evitando discrepancias de diseño.
+- **Bloque 4:** Se redactó la documentación técnica explicando el uso del _Design System_ propio, justificando cómo este patrón arquitectónico del frontend mejora la mantenibilidad del proyecto a largo plazo.
