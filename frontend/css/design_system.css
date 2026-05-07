@@ -13,52 +13,60 @@
     --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* Accesibilidad: Foco visible para navegación por teclado */
+input:focus, select:focus, textarea:focus, button:focus {
+    outline: 3px solid var(--color-warning);
+    outline-offset: 2px;
+}
+
 /* Componente: Tarjeta (Card) */
 .ui-card {
     background-color: var(--color-card-bg);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
     padding: 20px;
-    display: flex;
-    align-items: center;
-    gap: 15px;
+    margin-bottom: 20px;
 }
-.ui-card h3 { margin: 0; font-size: 24px; color: var(--color-text); }
-.ui-card p { margin: 0; color: var(--color-secondary); font-size: 14px; }
 
-/* Componente: Etiqueta de Estado (Badge) */
-.ui-badge {
-    padding: 5px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-    display: inline-block;
+/* Secciones de Formulario Complejo */
+.form-section {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: var(--radius-md);
+    background-color: #fafafa;
 }
+.form-section legend {
+    font-weight: bold;
+    color: var(--color-primary);
+    padding: 0 10px;
+    font-size: 1.1rem;
+}
+
+/* Mensajes y Ayudas */
+.help-text { font-size: 12px; color: var(--color-secondary); display: block; margin-top: 4px; }
+.error-msg { color: var(--color-danger); font-size: 13px; font-weight: bold; display: none; margin-top: 5px; }
+.input-error { border: 2px solid var(--color-danger) !important; background-color: #fff8f8; }
+
+.error-summary {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 15px;
+    border-radius: var(--radius-md);
+    border: 1px solid #f5c6cb;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* Estado de Carga en Botón */
+.btn-loading {
+    opacity: 0.7;
+    cursor: not-allowed !important;
+}
+.btn-loading::after { content: " ⏳"; }
+
+/* ... resto de tus estilos de tabla y badge ... */
+.ui-badge { padding: 5px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; color: white; display: inline-block; }
 .ui-badge.abierto { background-color: var(--color-danger); }
 .ui-badge.progreso { background-color: var(--color-warning); color: #000; }
 .ui-badge.cerrado { background-color: var(--color-success); }
-
-/* Componente: Tabla Estandar */
-.ui-table {
-    width: 100%;
-    border-collapse: collapse;
-    background-color: var(--color-card-bg);
-    box-shadow: var(--shadow-sm);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-}
-.ui-table th, .ui-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-.ui-table th { background-color: var(--color-primary); color: white; }
-
-/* Layout del Dashboard */
-.dashboard-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 30px;
-}
