@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <link rel="stylesheet" href="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nueva Incidencia</title>
-    <style>
-        .error-msg { color: var(--danger-color); font-size: 0.85rem; display: none; margin-top: 5px; }
-        .input-error { border: 2px solid var(--danger-color) !important; }
-        .success-panel { background-color: #d4edda; color: #155724; padding: 1rem; border-radius: 6px; margin-bottom: 1rem; display: none; }
-    </style>
+    <title>Nueva Incidencia - Sistema de Gestión</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/design_system.css">
 </head>
-<body>
-    <header>
-        <h1>Registrar Nueva Incidencia</h1>
-        <nav aria-label="Navegación principal">
-            <ul>
-                <li><a href="dashboard.html">Panel de Control</a></li>
-                <li><a href="listado.html">Ver Incidencias</a></li>
-            </ul>
+<body style="background-color: var(--color-bg); margin: 0; font-family: sans-serif;">
+    <header style="background-color: var(--color-primary); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;">
+        <h1 style="margin: 0; font-size: 24px;">Registrar Nueva Incidencia</h1>
+        <nav style="display: flex; gap: 25px; align-items: center;">
+            <a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;">Panel de Control</a>
+            <a href="listado.html" style="color: white; text-decoration: none; font-weight: bold;">Ver Incidencias</a>
+            <a href="alta.html" style="color: white; text-decoration: none; font-weight: bold; background-color: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px;">Nueva Incidencia</a>
         </nav>
     </header>
 
-    <main>
-        <section aria-labelledby="form-title">
-            <h2 id="form-title">Formulario de Alta</h2>
-            
-            <div id="panel-exito" class="success-panel">
-                ¡Incidencia registrada correctamente! Redirigiendo...
-            </div>
+    <main style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+        <div id="resumen-errores" class="error-summary" role="alert" aria-live="assertive">
+            <strong>Por favor, corrige los siguientes errores:</strong>
+            <ul id="lista-errores"></ul>
+        </div>
 
-            <form id="form-alta" action="listado.html" method="POST" novalidate>
-                <div>
-                    <label for="incidencia-titulo">Título breve:</label>
-                    <input type="text" id="incidencia-titulo" name="titulo">
-                    <span id="error-titulo" class="error-msg"></span>
-                </div>
-                
-                <div>
-                    <label for="incidencia-categoria">Categoría:</label>
-                    <select id="incidencia-categoria" name="categoria">
-                        <option value="">-- Selecciona una categoría --</option>
-                        <option value="hardware">Hardware</option>
-                        <option value="software">Software</option>
-                        <option value="redes">Redes</option>
-                    </select>
-                    <span id="error-categoria" class="error-msg"></span>
-                </div>
+        <div id="panel-exito" class="ui-card" style="display: none; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb;">
+            <strong>¡Éxito!</strong> La incidencia ha sido registrada. Redirigiendo al listado...
+        </div>
 
-                <div>
-                    <label for="incidencia-desc">Descripción detallada:</label>
-                    <textarea id="incidencia-desc" name="descripcion" rows="5"></textarea>
-                    <span id="error-desc" class="error-msg"></span>
-                </div>
+        <div class="ui-card">
+            <form id="form-alta" novalidate>
+                <fieldset class="form-section">
+                    <legend>Información de la Incidencia</legend>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="incidencia-titulo" style="display: block; font-weight: bold; margin-bottom: 5px;">Título breve (Obligatorio):</label>
+                        <input type="text" id="incidencia-titulo" name="titulo" style="width: 100%; padding: 10px; box-sizing: border-box;" 
+                               aria-describedby="ayuda-titulo error-titulo">
+                        <small id="ayuda-titulo" class="help-text">Resume el problema en una frase (ej. "Error login VPN").</small>
+                        <span id="error-titulo" class="error-msg" role="status"></span>
+                    </div>
 
-                <button type="submit">Crear Ticket</button>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="incidencia-categoria" style="display: block; font-weight: bold; margin-bottom: 5px;">Categoría:</label>
+                        <select id="incidencia-categoria" name="categoria" style="width: 100%; padding: 10px;">
+                            <option value="">-- Selecciona una categoría --</option>
+                            <option value="hardware">Hardware</option>
+                            <option value="software">Software</option>
+                            <option value="redes">Redes</option>
+                        </select>
+                        <span id="error-categoria" class="error-msg" role="status"></span>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>Detalles del Problema</legend>
+                    <div style="margin-bottom: 1rem;">
+                        <label for="incidencia-desc" style="display: block; font-weight: bold; margin-bottom: 5px;">Descripción detallada:</label>
+                        <textarea id="incidencia-desc" name="descripcion" rows="5" style="width: 100%; padding: 10px; box-sizing: border-box;" 
+                                  aria-describedby="ayuda-desc error-desc"></textarea>
+                        <small id="ayuda-desc" class="help-text">Indica los pasos para reproducir el error.</small>
+                        <span id="error-desc" class="error-msg" role="status"></span>
+                    </div>
+                </fieldset>
+
+                <div style="text-align: right;">
+                    <button type="submit" id="btn-submit" 
+                            style="background-color: var(--color-primary); color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
+                        Crear Ticket
+                    </button>
+                </div>
             </form>
-        </section>
+        </div>
     </main>
 
     <script src="../js/validaciones.js"></script>
