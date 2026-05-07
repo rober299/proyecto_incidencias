@@ -306,3 +306,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Se ha implementado un Dashboard web funcional. Se ha diseñado un archivo `design_system.css` con variables y clases reutilizables, y una librería `componentes.js` que genera HTML dinámico (Cards, Badges, Tablas).
 - **Bloque 3:** Se ha garantizado la consistencia visual, asegurando que todos los estados (Ej. "Abierto" = Rojo, "Resuelto" = Verde) comparten exactamente las mismas reglas CSS y funciones de renderizado, evitando discrepancias de diseño.
 - **Bloque 4:** Se redactó la documentación técnica explicando el uso del _Design System_ propio, justificando cómo este patrón arquitectónico del frontend mejora la mantenibilidad del proyecto a largo plazo.
+
+## Jornada 34 - Jueves 30 de abril de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se han refactorizado los formularios del frontend (`alta.html`) para convertirlos en "formularios complejos" funcionales. Se implementaron validaciones visuales con JavaScript, mostrando estados claros de carga (`btn-loading`), errores por campo (`input-error`) y mensajes de éxito contextuales.
+- **Bloque 3:** Se incorporaron principios básicos de accesibilidad web (a11y). Se definieron outlines claros para la navegación por teclado en el CSS, se usaron etiquetas `<label for="">`, `<fieldset>` y atributos ARIA (`aria-describedby`, `aria-live`) para lectores de pantalla.
+- **Bloque 4:** Se redactó un documento con un checklist de accesibilidad y buenas prácticas de UI que servirá como estándar de aceptación para futuras entregas del proyecto.
