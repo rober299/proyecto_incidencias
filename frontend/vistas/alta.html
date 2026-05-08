@@ -9,17 +9,22 @@
 </head>
 <body style="background-color: var(--color-bg); margin: 0; font-family: sans-serif;">
     <header style="background-color: var(--color-primary); color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;">
-        <h1 style="margin: 0; font-size: 24px;">Registrar Nueva Incidencia</h1>
+        <h1 style="margin: 0; font-size: 24px;" data-i18n="header.title">Registrar Nueva Incidencia</h1>
         <nav style="display: flex; gap: 25px; align-items: center;">
-            <a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;">Panel de Control</a>
-            <a href="listado.html" style="color: white; text-decoration: none; font-weight: bold;">Ver Incidencias</a>
-            <a href="alta.html" style="color: white; text-decoration: none; font-weight: bold; background-color: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px;">Nueva Incidencia</a>
+            <a href="dashboard.html" style="color: white; text-decoration: none; font-weight: bold;" data-i18n="nav.dashboard">Panel de Control</a>
+            <a href="listado.html" style="color: white; text-decoration: none; font-weight: bold;" data-i18n="nav.list">Ver Incidencias</a>
+            <a href="alta.html" style="color: white; text-decoration: none; font-weight: bold; background-color: rgba(255,255,255,0.2); padding: 8px 15px; border-radius: 4px;" data-i18n="nav.new">Nueva Incidencia</a>
+            
+            <select id="selector-idioma" style="padding: 5px; border-radius: 4px; border: none; font-weight: bold; cursor: pointer;">
+                <option value="es">🇪🇸 Español</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
         </nav>
     </header>
 
     <main style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
         <div id="resumen-errores" class="error-summary" role="alert" aria-live="assertive">
-            <strong>Por favor, corrige los siguientes errores:</strong>
+            <strong data-i18n="msg.error_summary">Por favor, corrige los siguientes errores:</strong>
             <ul id="lista-errores"></ul>
         </div>
 
@@ -30,49 +35,51 @@
         <div class="ui-card">
             <form id="form-alta" novalidate>
                 <fieldset class="form-section">
-                    <legend>Información de la Incidencia</legend>
+                    <legend data-i18n="form.basic_info">Información de la Incidencia</legend>
                     
                     <div style="margin-bottom: 1.5rem;">
-                        <label for="incidencia-titulo" style="display: block; font-weight: bold; margin-bottom: 5px;">Título breve (Obligatorio):</label>
+                        <label for="incidencia-titulo" style="display: block; font-weight: bold; margin-bottom: 5px;" data-i18n="form.title_label">Título breve (Obligatorio):</label>
                         <input type="text" id="incidencia-titulo" name="titulo" style="width: 100%; padding: 10px; box-sizing: border-box;" 
                                aria-describedby="ayuda-titulo error-titulo">
-                        <small id="ayuda-titulo" class="help-text">Resume el problema en una frase (ej. "Error login VPN").</small>
+                        <small id="ayuda-titulo" class="help-text" data-i18n="form.title_help">Resume el problema en una frase (ej. "Error login VPN").</small>
                         <span id="error-titulo" class="error-msg" role="status"></span>
                     </div>
 
                     <div style="margin-bottom: 1rem;">
-                        <label for="incidencia-categoria" style="display: block; font-weight: bold; margin-bottom: 5px;">Categoría:</label>
+                        <label for="incidencia-categoria" style="display: block; font-weight: bold; margin-bottom: 5px;" data-i18n="form.category_label">Categoría:</label>
                         <select id="incidencia-categoria" name="categoria" style="width: 100%; padding: 10px;">
-                            <option value="">-- Selecciona una categoría --</option>
-                            <option value="hardware">Hardware</option>
-                            <option value="software">Software</option>
-                            <option value="redes">Redes</option>
+                            <option value="" data-i18n="form.category_select">-- Selecciona una categoría --</option>
+                            <option value="hardware" data-i18n="form.cat_hardware">Hardware</option>
+                            <option value="software" data-i18n="form.cat_software">Software</option>
+                            <option value="redes" data-i18n="form.cat_network">Redes</option>
                         </select>
                         <span id="error-categoria" class="error-msg" role="status"></span>
                     </div>
                 </fieldset>
 
                 <fieldset class="form-section">
-                    <legend>Detalles del Problema</legend>
+                    <legend data-i18n="form.details">Detalles del Problema</legend>
                     <div style="margin-bottom: 1rem;">
-                        <label for="incidencia-desc" style="display: block; font-weight: bold; margin-bottom: 5px;">Descripción detallada:</label>
+                        <label for="incidencia-desc" style="display: block; font-weight: bold; margin-bottom: 5px;" data-i18n="form.desc_label">Descripción detallada:</label>
                         <textarea id="incidencia-desc" name="descripcion" rows="5" style="width: 100%; padding: 10px; box-sizing: border-box;" 
                                   aria-describedby="ayuda-desc error-desc"></textarea>
-                        <small id="ayuda-desc" class="help-text">Indica los pasos para reproducir el error.</small>
+                        <small id="ayuda-desc" class="help-text" data-i18n="form.desc_help">Indica los pasos para reproducir el error.</small>
                         <span id="error-desc" class="error-msg" role="status"></span>
                     </div>
                 </fieldset>
 
                 <div style="text-align: right;">
                     <button type="submit" id="btn-submit" 
-                            style="background-color: var(--color-primary); color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">
-                        Crear Ticket
+                            style="background-color: var(--color-primary); color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;" 
+                            data-i18n="form.submit">
+                        Crear Incidencia
                     </button>
                 </div>
             </form>
         </div>
     </main>
 
+    <script src="../js/i18n.js"></script>
     <script src="../js/validaciones.js"></script>
 </body>
 </html>
