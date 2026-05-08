@@ -314,3 +314,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Se han refactorizado los formularios del frontend (`alta.html`) para convertirlos en "formularios complejos" funcionales. Se implementaron validaciones visuales con JavaScript, mostrando estados claros de carga (`btn-loading`), errores por campo (`input-error`) y mensajes de éxito contextuales.
 - **Bloque 3:** Se incorporaron principios básicos de accesibilidad web (a11y). Se definieron outlines claros para la navegación por teclado en el CSS, se usaron etiquetas `<label for="">`, `<fieldset>` y atributos ARIA (`aria-describedby`, `aria-live`) para lectores de pantalla.
 - **Bloque 4:** Se redactó un documento con un checklist de accesibilidad y buenas prácticas de UI que servirá como estándar de aceptación para futuras entregas del proyecto.
+
+## Jornada 35 - Viernes 1 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se implementó una estrategia de internacionalización (i18n) básica. Se centralizaron los textos del formulario principal en un diccionario JSON (`i18n.js`) y se vincularon mediante atributos `data-i18n`. Se configuraron los idiomas Español e Inglés.
+- **Bloque 3:** Se definió una tabla de terminología para estandarizar el lenguaje de la aplicación (Ej: usar siempre "Incidencia" en lugar de "Ticket").
+- **Bloque 4:** Se hizo una limpieza de literales dispersos en el frontend (`alta.html`), asegurando un código más limpio, unificado y fácil de mantener para futuras iteraciones y traducciones.
