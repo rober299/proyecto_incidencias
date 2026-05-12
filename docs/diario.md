@@ -322,3 +322,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Se implementó una estrategia de internacionalización (i18n) básica. Se centralizaron los textos del formulario principal en un diccionario JSON (`i18n.js`) y se vincularon mediante atributos `data-i18n`. Se configuraron los idiomas Español e Inglés.
 - **Bloque 3:** Se definió una tabla de terminología para estandarizar el lenguaje de la aplicación (Ej: usar siempre "Incidencia" en lugar de "Ticket").
 - **Bloque 4:** Se hizo una limpieza de literales dispersos en el frontend (`alta.html`), asegurando un código más limpio, unificado y fácil de mantener para futuras iteraciones y traducciones.
+
+## Jornada 36 - Lunes 4 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha creado la estructura de paquetes para el backend (`config`, `controladores`, `servicios`, `repositorios`, `dtos`, etc.), preparando el terreno para una arquitectura limpia.
+- **Bloque 2:** Se ha implementado un servidor HTTP ligero nativo en Java (sin dependencias oscuras) con un endpoint de salud (`/health`) para monitorizar que arranca correctamente y que devuelve JSON.
+- **Bloques 3 y 4:** Se ha diseñado la API REST (versión 1) documentando los recursos principales (`/usuarios`, `/incidencias`, etc.) y sus métodos. Además, se redactó un documento de arquitectura explicando el flujo Petición -> Controlador -> Servicio -> Repositorio.
