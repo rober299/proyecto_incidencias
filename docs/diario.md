@@ -330,3 +330,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1:** Se ha creado la estructura de paquetes para el backend (`config`, `controladores`, `servicios`, `repositorios`, `dtos`, etc.), preparando el terreno para una arquitectura limpia.
 - **Bloque 2:** Se ha implementado un servidor HTTP ligero nativo en Java (sin dependencias oscuras) con un endpoint de salud (`/health`) para monitorizar que arranca correctamente y que devuelve JSON.
 - **Bloques 3 y 4:** Se ha diseñado la API REST (versión 1) documentando los recursos principales (`/usuarios`, `/incidencias`, etc.) y sus métodos. Además, se redactó un documento de arquitectura explicando el flujo Petición -> Controlador -> Servicio -> Repositorio.
+
+## Jornada 37 - Martes 5 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 3:** Se ha implementado el CRUD REST para `Usuario` e `Incidencia` usando controladores nativos (`HttpHandler`). Se ha conectado conceptualmente la capa web con la capa de servicios, devolviendo JSON limpios.
+- **Bloque 2:** Se mapearon correctamente los métodos HTTP a códigos de estado semánticos: GET (`200`), POST (`201`), DELETE (`204`) y errores estructurados (`400`, `404`, `405`).
+- **Bloque 4:** Se redactó la tabla de correspondencias HTTP y se generó una colección de pruebas en Postman (`coleccion_api_gestion_it.json`) para facilitar el testeo de los endpoints.
