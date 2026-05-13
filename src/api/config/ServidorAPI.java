@@ -20,6 +20,8 @@ public class ServidorAPI {
 
             // Mapear los endpoints (Rutas)
             server.createContext("/health", new HealthController());
+            server.createContext("/api/v1/usuarios", new api.controladores.UsuarioController());
+            server.createContext("/api/v1/incidencias", new api.controladores.IncidenciaController());
 
             // Ejecutor por defecto
             server.setExecutor(null);
