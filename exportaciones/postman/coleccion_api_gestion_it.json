@@ -1,0 +1,43 @@
+{
+	"info": {
+		"name": "Gestión IT - API REST (Jornada 37)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"url": {"raw": "http://localhost:8082/health", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["health"]}
+			}
+		},
+		{
+			"name": "Obtener Usuarios (200 OK)",
+			"request": {
+				"method": "GET",
+				"url": {"raw": "http://localhost:8082/api/v1/usuarios", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "usuarios"]}
+			}
+		},
+		{
+			"name": "Crear Usuario (201 Created)",
+			"request": {
+				"method": "POST",
+				"url": {"raw": "http://localhost:8082/api/v1/usuarios", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "usuarios"]}
+			}
+		},
+		{
+			"name": "Error Método no Permitido (405)",
+			"request": {
+				"method": "PUT",
+				"url": {"raw": "http://localhost:8082/api/v1/usuarios", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "usuarios"]}
+			}
+		},
+		{
+			"name": "Obtener Incidencias (200 OK)",
+			"request": {
+				"method": "GET",
+				"url": {"raw": "http://localhost:8082/api/v1/incidencias", "protocol": "http", "host": ["localhost"], "port": "8082", "path": ["api", "v1", "incidencias"]}
+			}
+		}
+	]
+}
