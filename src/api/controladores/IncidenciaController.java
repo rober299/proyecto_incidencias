@@ -5,7 +5,13 @@ import com.sun.net.httpserver.HttpHandler;
 import java.io.IOException;
 import java.io.OutputStream;
 
+// Importamos tu servicio real
+import orm.servicio.IncidenciaService;
+
 public class IncidenciaController implements HttpHandler {
+
+    // Conectamos con la capa de servicio
+    private IncidenciaService incidenciaService = new IncidenciaService(null);
 
     @Override
     public void handle(HttpExchange exchange) throws IOException {
@@ -15,11 +21,11 @@ public class IncidenciaController implements HttpHandler {
 
         try {
             if ("GET".equals(method)) {
-                // GET /incidencias
+                // Mantenemos tus ejemplos pero preparados para el servicio
                 enviarRespuesta(exchange, 200,
                         "[{\"id\": 101, \"titulo\": \"Fallo VPN\", \"estado\": \"ABIERTO\"}, {\"id\": 102, \"titulo\": \"Ratón roto\", \"estado\": \"CERRADO\"}]");
             } else if ("POST".equals(method)) {
-                // Simulación de validación
+                // Mantenemos tu lógica de validación
                 boolean bodyVacioSimulado = false;
 
                 if (bodyVacioSimulado) {
@@ -31,10 +37,9 @@ public class IncidenciaController implements HttpHandler {
                 }
             } else if ("PUT".equals(method)) {
                 if (path.matches(".*/incidencias/\\d+")) {
-                    // Actualización correcta
                     enviarRespuesta(exchange, 200, "{\"mensaje\": \"Incidencia actualizada correctamente\"}");
                 } else {
-                    // Falta el ID
+                    // Mantenemos tu mensaje específico de error
                     enviarRespuesta(exchange, 404,
                             "{\"error\": \"Recurso no encontrado\", \"mensaje\": \"Debe especificar un ID para actualizar.\"}");
                 }

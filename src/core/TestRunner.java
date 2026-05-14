@@ -1,3 +1,5 @@
+package core;
+
 public class TestRunner {
 
     // Utilidad para imprimir el resultado del test

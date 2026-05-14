@@ -1,3 +1,5 @@
+package core;
+
 // 1. Error genérico de validación (campos vacíos, nulos, formatos raros)
 class ValidacionDatosException extends RuntimeException {
     public ValidacionDatosException(String mensaje) {

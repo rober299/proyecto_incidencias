@@ -1,3 +1,5 @@
+package core;
+
 public class ValidadorEstado {
     public static boolean esTransicionValida(String origen, String destino) {
 

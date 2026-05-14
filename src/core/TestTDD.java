@@ -1,3 +1,5 @@
+package core;
+
 public class TestTDD {
     private static int fallos = 0;
 

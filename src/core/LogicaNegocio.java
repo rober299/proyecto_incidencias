@@ -1,3 +1,5 @@
+package core;
+
 public class LogicaNegocio {
 
     // 1. Cálculo de prioridad

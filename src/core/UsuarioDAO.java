@@ -1,3 +1,5 @@
+package core;
+
 public interface UsuarioDAO {
     Usuario insertar(Usuario usuario);
 

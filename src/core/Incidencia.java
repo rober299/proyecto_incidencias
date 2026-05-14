@@ -1,3 +1,5 @@
+package core;
+
 public class Incidencia {
     private int idIncidencia;
     private String titulo;
