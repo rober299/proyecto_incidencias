@@ -1,3 +1,5 @@
+import core.*;
+
 public class PruebaErrores {
 
     // Simulamos un logger básico
