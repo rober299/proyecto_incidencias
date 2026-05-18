@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.sql.Connection;
 
-// Importamos las clases de la carpeta core
 import core.Usuario;
 import core.UsuarioDAOImpl;
 import core.ConexionBD;
@@ -17,6 +16,9 @@ public class UsuarioController implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
         String method = exchange.getRequestMethod();
         String path = exchange.getRequestURI().getPath();
+
+        // Obtenemos el rol que nos ha pasado el filtro
+        String rolUsuario = (String) exchange.getAttribute("rol");
 
         exchange.getResponseHeaders().set("Content-Type", "application/json; charset=UTF-8");
 
@@ -47,8 +49,20 @@ public class UsuarioController implements HttpHandler {
                             "[{\"id\": 1, \"nombre\": \"Rober\"}, {\"id\": 2, \"nombre\": \"Ana\"}]");
                 }
             } else if ("POST".equals(method)) {
+                // solo el admin puede crear usuarios
+                if (!"ADMIN".equals(rolUsuario)) {
+                    enviarRespuesta(exchange, 403, "{\"error\": \"Prohibido. Solo los ADMIN pueden crear usuarios.\"}");
+                    return;
+                }
                 enviarRespuesta(exchange, 201, "{\"mensaje\": \"Usuario creado correctamente\", \"id\": 3}");
             } else if ("DELETE".equals(method)) {
+                // solo el admin puede borrar usuarios
+                if (!"ADMIN".equals(rolUsuario)) {
+                    enviarRespuesta(exchange, 403,
+                            "{\"error\": \"Prohibido. Solo los ADMIN pueden borrar usuarios.\"}");
+                    return;
+                }
+
                 if (path.matches(".*/usuarios/\\d+")) {
                     String[] partes = path.split("/");
                     int idBorrar = Integer.parseInt(partes[partes.length - 1]);
