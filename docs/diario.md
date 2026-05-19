@@ -338,3 +338,21 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 3:** Se ha implementado el CRUD REST para `Usuario` e `Incidencia` usando controladores nativos (`HttpHandler`). Se ha conectado conceptualmente la capa web con la capa de servicios, devolviendo JSON limpios.
 - **Bloque 2:** Se mapearon correctamente los métodos HTTP a códigos de estado semánticos: GET (`200`), POST (`201`), DELETE (`204`) y errores estructurados (`400`, `404`, `405`).
 - **Bloque 4:** Se redactó la tabla de correspondencias HTTP y se generó una colección de pruebas en Postman (`coleccion_api_gestion_it.json`) para facilitar el testeo de los endpoints.
+
+## Jornada 38 - Miércoles 6 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se ha diseñado el flujo de autenticación creando un middleware (`FiltroAutenticacion`) que intercepta las peticiones exigiendo un token Bearer válido. Se implementó el `LoginController` y un gestor para emitir tokens temporales.
+- **Bloque 2:** Se implementó el control de acceso basado en roles (RBAC). Se modificó el `UsuarioController` para restringir operaciones críticas (como `POST` y `DELETE`), devolviendo un error `403 Prohibido` a los usuarios que no son `ADMIN`.
+- **Bloque 3:** Se han probado los accesos permitidos y denegados desde Postman (errores `401` y `403`, y acceso `200 OK`), guardando las capturas de evidencia requeridas y actualizando la colección exportable del proyecto.
+- **Bloque 4:** Se redactó una nota técnica en la documentación detallando la estrategia de seguridad: almacenamiento de contraseñas, arquitectura stateless basada en tokens, matriz de roles y buenas prácticas.
+
+## Jornada 39 - Jueves 7 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1:** Se crearon las validaciones centralizadas en la capa de entrada de datos (`ValidadorDTO`), controlando de forma estricta los formatos obligatorios de email (presencia de '@' y dominio) y longitudes mínimas para contraseñas.
+- **Bloque 2:** Se implementó un middleware centralizado (`ManejadorErroresGlobal`) para interceptar todas las excepciones del dominio y del sistema, unificando las salidas en un formato JSON homogéneo, predecible y trazable.
+- **Bloque 3:** Se generó la documentación técnica manual de la API en el archivo `documentacion_api.md`, detallando el catálogo completo de endpoints, los cuerpos JSON requeridos y la matriz de permisos por rol.
+- **Bloque 4:** Se ejecutó la batería de pruebas de errores provocando fallos controlados a propósito (email inválido, contraseña corta e ID inexistente), verificando la consistencia de las respuestas y guardando las capturas como evidencias.
