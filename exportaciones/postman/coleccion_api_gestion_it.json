@@ -28,13 +28,33 @@
     },
     {
       "name": "Obtener Usuarios (200 OK)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"El código de estado debe ser 200 OK\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"La respuesta debe ser una lista (array)\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData).to.be.an('array');\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
           "bearer": [
             {
               "key": "token",
-              "value": "1a864e0b-d551-48f6-b0a0-b47d93c7f7af",
+              "value": "1d3ba13d-4391-41fa-b017-d902aee8c3a6",
               "type": "string"
             }
           ]
@@ -60,13 +80,33 @@
     },
     {
       "name": "Crear Usuario (201 Created)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"El código de estado debe ser 400 Bad Request\", function () {\r",
+              "    pm.response.to.have.status(400);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"El JSON de error debe contener la propiedad 'error'\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.error).to.exist;\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "auth": {
           "type": "bearer",
           "bearer": [
             {
               "key": "token",
-              "value": "08b0e508-4ed8-4457-963b-7e5029a18730",
+              "value": "1d3ba13d-4391-41fa-b017-d902aee8c3a6",
               "type": "string"
             }
           ]
@@ -143,6 +183,26 @@
     },
     {
       "name": "Login Usuario",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"El código de estado debe ser 200 OK\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"Debe devolver un token de seguridad\", function () {\r",
+              "    var jsonData = pm.response.json();\r",
+              "    pm.expect(jsonData.token).to.exist;\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
       "request": {
         "method": "POST",
         "header": [],
