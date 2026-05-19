@@ -356,3 +356,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 2:** Se implementó un middleware centralizado (`ManejadorErroresGlobal`) para interceptar todas las excepciones del dominio y del sistema, unificando las salidas en un formato JSON homogéneo, predecible y trazable.
 - **Bloque 3:** Se generó la documentación técnica manual de la API en el archivo `documentacion_api.md`, detallando el catálogo completo de endpoints, los cuerpos JSON requeridos y la matriz de permisos por rol.
 - **Bloque 4:** Se ejecutó la batería de pruebas de errores provocando fallos controlados a propósito (email inválido, contraseña corta e ID inexistente), verificando la consistencia de las respuestas y guardando las capturas como evidencias.
+
+## Jornada 40 - Viernes 8 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 2:** Se implementó la automatización de pruebas básicas utilizando el Runner de Postman y scripts de validación (Tests). Se verificaron los códigos de estado HTTP (200 OK, 400 Bad Request) y la estructura del cuerpo de las respuestas (existencia de tokens, arrays y mensajes de error).
+- **Bloque 3:** Se definió la estrategia de versionado de la API (v1, v2) basada en URI y se establecieron las normas para mantener el contrato JSON estable y retrocompatible.
+- **Bloque 4:** Se redactó el informe final de integración detallando los endpoints operativos, sus métodos, requisitos de autenticación y consideraciones clave para el equipo de Frontend. El backend queda testeado, documentado y listo para consumo.
