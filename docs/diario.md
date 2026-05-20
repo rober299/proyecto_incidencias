@@ -364,3 +364,18 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1 y 2:** Se implementó la automatización de pruebas básicas utilizando el Runner de Postman y scripts de validación (Tests). Se verificaron los códigos de estado HTTP (200 OK, 400 Bad Request) y la estructura del cuerpo de las respuestas (existencia de tokens, arrays y mensajes de error).
 - **Bloque 3:** Se definió la estrategia de versionado de la API (v1, v2) basada en URI y se establecieron las normas para mantener el contrato JSON estable y retrocompatible.
 - **Bloque 4:** Se redactó el informe final de integración detallando los endpoints operativos, sus métodos, requisitos de autenticación y consideraciones clave para el equipo de Frontend. El backend queda testeado, documentado y listo para consumo.
+
+## Jornada 41 - Lunes 11 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 4:** Se redactó la documentación técnica (`analisis_concurrencia.md`) definiendo las diferencias entre concurrencia, paralelismo, hilos y procesos en el entorno del servidor HTTP. Se establecieron las conclusiones sobre los beneficios de la concurrencia (procesamiento por lotes) frente a los riesgos en código sin estado.
+- **Bloque 2 y 3:** Se desarrolló el caso práctico `SimuladorExportacion.java` ejecutando 1000 hilos paralelos. Se demostró la "condición de carrera" evidenciando pérdida de datos al acceder a una variable compartida. Posteriormente, se refactorizó el código implementando un bloque `synchronized` (bloqueo mutuo), resolviendo el acceso simultáneo y garantizando la integridad de los datos.
+
+## Jornada 42 - Martes 12 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloque 1 y 2:** Se implementó el patrón de coordinación Productor-Consumidor mediante una `LinkedBlockingQueue`. Se desacopló la lógica simulando un entorno de Gestión IT donde un hilo encola tareas (creación de incidencias) y otro las procesa de forma diferida (envío de emails).
+- **Bloque 3:** Se ejecutaron pruebas variando los ritmos de carga. Se observó cómo un productor rápido genera cuellos de botella (acumulación) requiriendo control de tamaño máximo, mientras que un consumidor rápido mantiene la cola vaciada.
+- **Bloque 4:** Se redactó la documentación (`patron_productor_consumidor.md`) proyectando la arquitectura a contextos empresariales reales y listando herramientas de sustitución profesional para Message Brokering, como RabbitMQ y Apache Kafka.
