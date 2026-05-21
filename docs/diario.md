@@ -379,3 +379,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloque 1 y 2:** Se implementó el patrón de coordinación Productor-Consumidor mediante una `LinkedBlockingQueue`. Se desacopló la lógica simulando un entorno de Gestión IT donde un hilo encola tareas (creación de incidencias) y otro las procesa de forma diferida (envío de emails).
 - **Bloque 3:** Se ejecutaron pruebas variando los ritmos de carga. Se observó cómo un productor rápido genera cuellos de botella (acumulación) requiriendo control de tamaño máximo, mientras que un consumidor rápido mantiene la cola vaciada.
 - **Bloque 4:** Se redactó la documentación (`patron_productor_consumidor.md`) proyectando la arquitectura a contextos empresariales reales y listando herramientas de sustitución profesional para Message Brokering, como RabbitMQ y Apache Kafka.
+
+## Jornada 43 - Miércoles 13 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se programó un cliente nativo en Java (`ClienteIntegracion.java`) empleando la clase `HttpClient` para consumir la propia API. Se gestionaron diferentes respuestas: 200 OK (éxito), 403 Forbidden (errores semánticos no bloqueantes) y simulaciones de Timeouts, implementando un sistema robusto de reintentos lógicos en la conexión.
+- **Bloque 3:** Se aplicó la serialización en el cliente para montar los cuerpos HTTP y la deserialización mediante expresiones regulares para extraer propiedades clave de los JSON recibidos (como el token JWT), validando así el contrato bidireccional.
+- **Bloque 4:** Se elaboró un documento estratégico (`esquema_integracion.md`) mapeando las arquitecturas de consumo futuras (Frontend SPA, Apps móviles, scripts batch y sistemas de terceros), afianzando el concepto de sistema distribuido.
