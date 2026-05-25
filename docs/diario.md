@@ -387,3 +387,10 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 - **Bloques 1 y 2:** Se programó un cliente nativo en Java (`ClienteIntegracion.java`) empleando la clase `HttpClient` para consumir la propia API. Se gestionaron diferentes respuestas: 200 OK (éxito), 403 Forbidden (errores semánticos no bloqueantes) y simulaciones de Timeouts, implementando un sistema robusto de reintentos lógicos en la conexión.
 - **Bloque 3:** Se aplicó la serialización en el cliente para montar los cuerpos HTTP y la deserialización mediante expresiones regulares para extraer propiedades clave de los JSON recibidos (como el token JWT), validando así el contrato bidireccional.
 - **Bloque 4:** Se elaboró un documento estratégico (`esquema_integracion.md`) mapeando las arquitecturas de consumo futuras (Frontend SPA, Apps móviles, scripts batch y sistemas de terceros), afianzando el concepto de sistema distribuido.
+
+## Jornada 44 - Jueves 14 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1, 2 y 3:** Se programó una herramienta CLI independiente (`ExportadorBatch.java`) para gestionar la exportación nocturna de incidencias a formato CSV. El script recibe argumentos externos para definir la ruta de salida, se conecta por JDBC a la base de datos, valida la integridad de los datos (descartando registros anómalos o vacíos) y arroja un log detallado y un resumen final por consola.
+- **Bloque 4:** Se redactó la documentación técnica (`guia_despliegue_batch.md`) especificando el protocolo para montar esta tarea en un servidor Linux. Se detallaron las dependencias, la creación de un script `.sh` ejecutor, la configuración de la expresión en `Cron` para su disparo automático a las 02:00 AM y la redirección de logs al sistema.
