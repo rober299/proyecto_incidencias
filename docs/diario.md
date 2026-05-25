@@ -394,3 +394,10 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 
 - **Bloques 1, 2 y 3:** Se programó una herramienta CLI independiente (`ExportadorBatch.java`) para gestionar la exportación nocturna de incidencias a formato CSV. El script recibe argumentos externos para definir la ruta de salida, se conecta por JDBC a la base de datos, valida la integridad de los datos (descartando registros anómalos o vacíos) y arroja un log detallado y un resumen final por consola.
 - **Bloque 4:** Se redactó la documentación técnica (`guia_despliegue_batch.md`) especificando el protocolo para montar esta tarea en un servidor Linux. Se detallaron las dependencias, la creación de un script `.sh` ejecutor, la configuración de la expresión en `Cron` para su disparo automático a las 02:00 AM y la redirección de logs al sistema.
+
+## Jornada 45 - Viernes 15 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1, 2 y 4:** Se implementó una demo técnica (`ProcesoResiliente.java`) enfocada en la observabilidad y tolerancia a fallos. Se diseñó un logger estructurado por niveles (INFO, WARN, ERROR). Se introdujeron patrones de resiliencia como la validación de variables de entorno y un bucle de reintentos con tiempos de espera (`Thread.sleep`) ante caídas de servicios dependientes, culminando en mensajes de error accionables.
+- **Bloque 3:** Se redactó la documentación operativa técnica (`checklist_supervision.md`) proporcionando a los equipos de soporte (Troubleshooting) una guía rápida de diagnóstico y recuperación ante caídas de la API, interrupciones en procesos Batch y fallos silenciosos en tareas programadas por Cron.
