@@ -401,3 +401,10 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 
 - **Bloques 1, 2 y 4:** Se implementó una demo técnica (`ProcesoResiliente.java`) enfocada en la observabilidad y tolerancia a fallos. Se diseñó un logger estructurado por niveles (INFO, WARN, ERROR). Se introdujeron patrones de resiliencia como la validación de variables de entorno y un bucle de reintentos con tiempos de espera (`Thread.sleep`) ante caídas de servicios dependientes, culminando en mensajes de error accionables.
 - **Bloque 3:** Se redactó la documentación operativa técnica (`checklist_supervision.md`) proporcionando a los equipos de soporte (Troubleshooting) una guía rápida de diagnóstico y recuperación ante caídas de la API, interrupciones en procesos Batch y fallos silenciosos en tareas programadas por Cron.
+
+## Jornada 46 - Lunes 18 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se configuró el entorno nativo en Android Studio (Java/XML). Se diseñaron las 5 pantallas base (Login, Listado, Detalle, Creación, Perfil) aplicando estándares de Material Design 3 (CardViews, TextInputs outlinelined) y validación de formularios.
+- **Bloques 3 y 4:** Se implementó la navegación mediante `Intents` y el manejo de la pila de actividades con botones de retroceso. Se documentó la arquitectura en `arquitectura_movil.md` justificando el enfoque nativo.
