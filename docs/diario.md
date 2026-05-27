@@ -408,3 +408,11 @@ Se ha configurado la variable de entorno `JAVA_HOME` apuntando al directorio de 
 
 - **Bloques 1 y 2:** Se configuró el entorno nativo en Android Studio (Java/XML). Se diseñaron las 5 pantallas base (Login, Listado, Detalle, Creación, Perfil) aplicando estándares de Material Design 3 (CardViews, TextInputs outlinelined) y validación de formularios.
 - **Bloques 3 y 4:** Se implementó la navegación mediante `Intents` y el manejo de la pila de actividades con botones de retroceso. Se documentó la arquitectura en `arquitectura_movil.md` justificando el enfoque nativo.
+
+## Jornada 47 - Martes 19 de mayo de 2026
+
+### 📝 Resumen del día
+
+- **Bloques 1 y 2:** Se implementó el cliente HTTP nativo en el entorno móvil utilizando `HttpURLConnection` y concurrencia mediante `ExecutorService`. Se configuraron los permisos de red en el manifiesto (`INTERNET` y `usesCleartextTraffic`) para permitir comunicación local. Se completó el flujo de autenticación real parseando la respuesta JSON del servidor para extraer el token e integrarlo en la persistencia local cifrada a través de `SharedPreferences`.
+- **Bloque 3:** Se conectó con éxito la pantalla de incidencias a la API real del backend (`/api/v1/incidencias`) apuntando al puerto `8082`. Se programó la renderización dinámica de los datos del servidor inyectando componentes `CardView` en tiempo de ejecución de manera limpia.
+- **Bloque 4:** Se realizaron pruebas de estrés y conectividad ante fallas (rutas erróneas 404/405 y tokens inválidos), solventando las discrepancias de integración con soporte de Postman. Se redactó el documento técnico de contingencias de red (`escenarios_red.md`) detallando la resiliencia de la app ante caídas del servidor.
