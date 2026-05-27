@@ -11,9 +11,45 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#1A237E"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-            <TextView android:text="Mis Incidencias" android:textColor="#FFF" android:textSize="20sp" android:textStyle="bold" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true"/>
-            <Button android:id="@+id/btnIrPerfil" android:text="PERFIL" android:layout_alignParentEnd="true" android:layout_marginEnd="16dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:backgroundTint="#3949AB"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="Incidencias"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnRefrescar"
+                    android:text="↻"
+                    android:textSize="24sp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#3949AB"
+                    android:layout_marginEnd="8dp"
+                    android:padding="0dp"/>
+
+                <Button
+                    android:id="@+id/btnIrPerfil"
+                    android:text="PERFIL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#3949AB"
+                    android:layout_marginEnd="16dp"/>
+            </LinearLayout>
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -23,44 +59,23 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="16dp">
+            android:layout_height="match_parent">
+
             <LinearLayout
+                android:id="@+id/contenedorLista"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="16dp"
                 android:orientation="vertical">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="12dp"
-                    app:cardCornerRadius="12dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:orientation="vertical">
-                        <TextView android:text="#104 - Fallo en Red" android:textStyle="bold" android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="Prioridad: Alta" android:textColor="#E53935" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:cardCornerRadius="12dp">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:orientation="vertical">
-                        <TextView android:text="#105 - Actualización SO" android:textStyle="bold" android:textSize="18sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <TextView android:text="Prioridad: Media" android:textColor="#FBC02D" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
             </LinearLayout>
         </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabNueva"
