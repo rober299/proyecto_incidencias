@@ -30,7 +30,6 @@ public class ListadoActivity extends AppCompatActivity {
     private LinearLayout contenedorLista;
     private ProgressBar progressBar;
     private Button btnRefrescar;
-    // URL usando la IP del host del emulador (10.0.2.2) y puerto de Postman (8082)
     private static final String URL_LISTADO = "http://10.0.2.2:8082/api/v1/incidencias";
 
     @Override
@@ -48,8 +47,22 @@ public class ListadoActivity extends AppCompatActivity {
         // Lógica de refresco manual
         btnRefrescar.setOnClickListener(v -> cargarIncidenciasDesdeAPI());
 
-        // Carga automática al abrir
+        cargarCacheLocal();
+
         cargarIncidenciasDesdeAPI();
+    }
+    private void cargarCacheLocal() {
+        SharedPreferences prefs = getSharedPreferences("SesionIT", Context.MODE_PRIVATE);
+        String cacheJson = prefs.getString("CACHE_INCIDENCIAS", null);
+
+        if (cacheJson != null) {
+            try {
+                JSONArray incidenciasArray = new JSONArray(cacheJson);
+                renderizarIncidencias(incidenciasArray);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     private void cargarIncidenciasDesdeAPI() {
@@ -79,7 +92,11 @@ public class ListadoActivity extends AppCompatActivity {
                     while ((line = in.readLine()) != null) response.append(line);
                     in.close();
 
-                    JSONArray incidenciasArray = new JSONArray(response.toString());
+                    String jsonRespuesta = response.toString();
+
+                    prefs.edit().putString("CACHE_INCIDENCIAS", jsonRespuesta).apply();
+
+                    JSONArray incidenciasArray = new JSONArray(jsonRespuesta);
 
                     // Volvemos al hilo principal para actualizar la UI
                     handler.post(() -> {
@@ -98,7 +115,12 @@ public class ListadoActivity extends AppCompatActivity {
                 handler.post(() -> {
                     progressBar.setVisibility(View.GONE);
                     btnRefrescar.setEnabled(true);
-                    Toast.makeText(this, "Fallo de conexión: ¿Servidor encendido?", Toast.LENGTH_LONG).show();
+
+                    if (prefs.contains("CACHE_INCIDENCIAS")) {
+                        Toast.makeText(this, "Modo sin conexión: Mostrando caché local", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(this, "Fallo de conexión: ¿Servidor encendido?", Toast.LENGTH_LONG).show();
+                    }
                 });
             }
         });
@@ -110,7 +132,7 @@ public class ListadoActivity extends AppCompatActivity {
             for (int i = 0; i < array.length(); i++) {
                 JSONObject obj = array.getJSONObject(i);
 
-                // 1. Tarjeta (CardView)
+                // 1. Tarjeta
                 CardView card = new CardView(this);
                 LinearLayout.LayoutParams paramsCard = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -119,7 +141,7 @@ public class ListadoActivity extends AppCompatActivity {
                 card.setRadius(24f);
                 card.setCardElevation(8f);
 
-                // 2. Contenedor interno (LA CLAVE ESTÁ AQUÍ, le damos parámetros explícitos)
+                // 2. Contenedor interno
                 LinearLayout inner = new LinearLayout(this);
                 inner.setLayoutParams(new android.widget.FrameLayout.LayoutParams(
                         android.widget.FrameLayout.LayoutParams.MATCH_PARENT,
@@ -127,7 +149,7 @@ public class ListadoActivity extends AppCompatActivity {
                 inner.setOrientation(LinearLayout.VERTICAL);
                 inner.setPadding(48, 48, 48, 48);
 
-                // 3. Título (Ahora con LayoutParams para que no se aplaste)
+                // 3. Título
                 TextView tvTitulo = new TextView(this);
                 tvTitulo.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
@@ -137,7 +159,7 @@ public class ListadoActivity extends AppCompatActivity {
                 tvTitulo.setTypeface(null, android.graphics.Typeface.BOLD);
                 tvTitulo.setPadding(0, 0, 0, 16);
 
-                // 4. Estado (También blindado con LayoutParams)
+                // 4. Estado
                 TextView tvEstado = new TextView(this);
                 tvEstado.setLayoutParams(new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
